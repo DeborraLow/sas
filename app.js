@@ -43,6 +43,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/health', function(req, res) {res.sendStatus(200)});
 app.use('/users', users);
 app.post('/subscribe', function(req, res) {
 
