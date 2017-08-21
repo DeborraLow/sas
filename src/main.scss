@@ -79,10 +79,113 @@
   font-family: 'Agipo Bold',sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 .hello-screen {
-  background-image:url('assets/003-north-by-northwest-theredlist.jpg')
+  position: relative;
+  background-image:url('003-north-by-northwest-theredlist.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hello-screen__filter{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0
+}
+.test-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-results {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+  z-index: 9;
+}
+
+.h1 {
+  z-index: 9;
+}
+
+.h2,.h3 {
+  text-align: center;
+  margin: 10px;
+}
+.list-item__header {
+  margin: 10px;
+}
+.list-item__description{
+  margin:10px;
 }
 
 .header {
   display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.contacts-block  {
+  display:flex;
+  z-index: 9;
+  color: #fff;
+}
+.social__list {
+  display:flex;
+  list-style: none;
+}
+
+.contacts__list {
+  list-style: none;
+}
+
+.test-row {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.list_horizontal {
+  display: flex;
+flex-direction: row;
+}
+.list-item {
+  max-width: 33.333%;
+  list-style: none;
+}
+.list-item_horizontal {
+  max-width: 100%;
+  list-style: none;
+}
+.h1 {
+  flex-basis: 50vh;
+  text-align: center;
+  margin:auto;
+  color:#fff;
+}
+
+.button {
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  background-color: #00f;
+  border-radius: 15px;
+  border-width: 0px;
+  z-index: 9;
 }

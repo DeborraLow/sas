@@ -17,6 +17,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './public'
+
   },
   module: {
     rules: [
