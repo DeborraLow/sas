@@ -50,9 +50,7 @@ app.get('/health', function(req, res) {
   res.end();
 });
 
-var ipaddress = env.NODE_IP ||
-//'192.168.2.1';
-'127.0.0.1';
+var ipaddress = env.NODE_IP || '127.0.0.1';
 var port = env.NODE_PORT || 3000;
 app.listen(port, ipaddress, function() {
   console.log(`Application worker ${process.pid} started...`);
