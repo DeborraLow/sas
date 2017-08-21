@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var env = process.env;
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -43,7 +44,20 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/health', function(req, res) {res.sendStatus(200)});
+//openshift health app test
+app.get('/health', function(req, res) {
+  res.writeHead(200);
+  res.end();
+});
+
+var ipaddress = env.NODE_IP ||
+//'192.168.2.1';
+'127.0.0.1';
+var port = env.NODE_PORT || 3000;
+app.listen(port, ipaddress, function() {
+  console.log(`Application worker ${process.pid} started...`);
+});
+
 app.use('/users', users);
 app.post('/subscribe', function(req, res) {
 
