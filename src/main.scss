@@ -577,6 +577,7 @@ body {
 }
 
 .share {
+  flex-grow: 10;
   z-index: 9;
   display: flex;
 }
@@ -679,6 +680,7 @@ margin:10px ;
   padding-left: 0;
 }
 .list_results {
+  flex-grow: 10;
 justify-content: space-around;
 }
 .list_horizontal {
