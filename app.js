@@ -85,7 +85,7 @@ app.post('/subscribe', function(req, res) {
 });
 app.post('/sendresult', function(req, res) {
     var now = new Date();
-    var results = now.toLocaleDateString('en-US', { timeZone: 'Asia/Yekaterinburg' }) + ' - ' + req.headers['x-forwarded-for'] + ': ' + req.body;
+    var results = now.toLocaleString('en-US', { timeZone: 'Asia/Yekaterinburg' }) + ' - ' + req.headers['x-forwarded-for'] + ': ' + req.body;
     console.log("Received new test result: " + results);
     fs.readFile('public/assets/results.txt', (err, data) => {
       if (err) console.log(err);
