@@ -8,6 +8,9 @@ xmlhttp.onreadystatechange = function() {
         if(xmlhttp.status == 200) {
             var obj = JSON.parse(xmlhttp.responseText);
             ip = obj.ip;
+            console.log(xmlhttp.responseText);
+            console.log(obj);
+            console.log(ip);
          }
     }
 };
