@@ -2,6 +2,7 @@ import scss from './main.scss';
 //import js from './evercookies.js'
 var ip;
 var xmlhttp = new XMLHttpRequest();
+xmlhttp.withCredentials = true;
 xmlhttp.open('GET', '//jsonip.com', true);
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4) {
