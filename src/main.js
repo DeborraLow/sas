@@ -1,5 +1,17 @@
 import scss from './main.scss';
 //import js from './evercookies.js'
+var ip;
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open('GET', '//jsonip.com', true);
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4) {
+        if(xmlhttp.status == 200) {
+            var obj = JSON.parse(xmlhttp.responseText);
+            ip = obj.ip;
+         }
+    }
+};
+xmlhttp.send(null);
 var checkedItems = [];
 var startButton = document.getElementById('start-button');
 startButton.addEventListener('click', () => {
@@ -52,9 +64,10 @@ for (var i = 0; i < listItems3.length; i++) {
 }
 
 function sendResult(items){
+  var sendObj = {'ip':ip, 'results':items};
   console.log(items);
   var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
   xmlhttp.open("POST", "/sendresult");
   xmlhttp.setRequestHeader("Content-Type", "application/json");
-  xmlhttp.send(JSON.stringify(items));
+  xmlhttp.send(JSON.stringify(sendObj));
 }

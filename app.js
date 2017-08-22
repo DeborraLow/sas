@@ -85,11 +85,12 @@ app.post('/subscribe', function(req, res) {
 });
 app.post('/sendresult', function(req, res) {
 
-    var results = req.body;
+    var results = req.body.results;
+    var ip = req.body.ip;
     console.log("Received new test result: " + results);
     fs.readFile('public/assets/results.txt', (err, data) => {
       if (err) console.log(err);
-      fs.writeFile('public/assets/results.txt', data + '\n' + results)
+      fs.writeFile('public/assets/results.txt', data + '\n' + ip + ': ' + results)
     });
 
     // setup email data with unicode symbols
