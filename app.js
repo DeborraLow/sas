@@ -85,8 +85,7 @@ app.post('/subscribe', function(req, res) {
 });
 app.post('/sendresult', function(req, res) {
 
-    var results = req.body.results;
-    var ip = req.body.ip;
+    var results = req.body;
     console.log("Received new test result: " + results);
     fs.readFile('public/assets/results.txt', (err, data) => {
       if (err) console.log(err);
