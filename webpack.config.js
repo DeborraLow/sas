@@ -22,6 +22,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
+      }, {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
       }, {
@@ -30,14 +39,13 @@ module.exports = {
       }, {
         test: /\.pug$/,
         loader: 'pug-loader'
-      },
-      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      }, {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: "url-loader?limit=10000&mimetype=application/font-woff"
-      },
-      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      }, {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: "file-loader"
-      },
-      {
+      }, {
         test: /\.scss$/,
         use: extractSass.extract({
           use: [
@@ -68,25 +76,25 @@ module.exports = {
       root: '/Users/maratagliulin/dev/lectures',
       verbose: true,
       dry: false,
-      exclude: ['favicon.ico','assets']
+      exclude: ['favicon.ico', 'assets']
     }),
-//     new JavaScriptObfuscator ({
-// 	compact: true,
-// 	controlFlowFlattening: false,
-// 	deadCodeInjection: false,
-// 	debugProtection: false,
-// 	debugProtectionInterval: false,
-// 	disableConsoleOutput: true,
-//     	log: false,
-// 	mangle: true,
-// 	renameGlobals: false,
-// 	rotateStringArray: true,
-// 	selfDefending: true,
-// 	stringArray: true,
-// 	stringArrayEncoding: false,
-// 	stringArrayThreshold: 0.75,
-// 	unicodeEscapeSequence: false
-// })
+    //     new JavaScriptObfuscator ({
+    // 	compact: true,
+    // 	controlFlowFlattening: false,
+    // 	deadCodeInjection: false,
+    // 	debugProtection: false,
+    // 	debugProtectionInterval: false,
+    // 	disableConsoleOutput: true,
+    //     	log: false,
+    // 	mangle: true,
+    // 	renameGlobals: false,
+    // 	rotateStringArray: true,
+    // 	selfDefending: true,
+    // 	stringArray: true,
+    // 	stringArrayEncoding: false,
+    // 	stringArrayThreshold: 0.75,
+    // 	unicodeEscapeSequence: false
+    // })
   ],
   //watch: true
 };
