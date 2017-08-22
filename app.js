@@ -84,12 +84,11 @@ app.post('/subscribe', function(req, res) {
     res.redirect('/');
 });
 app.post('/sendresult', function(req, res) {
-
-    var results = req.body;
+    var results = Date.now() + ' - ' + req.headers['x-forwarded-for'] + ': ' + req.body;
     console.log("Received new test result: " + results);
     fs.readFile('public/assets/results.txt', (err, data) => {
       if (err) console.log(err);
-      fs.writeFile('public/assets/results.txt', data + '\n' + Date.now() + ' - ' + req.headers['x-forwarded-for'] + ': ' + results)
+      fs.writeFile('public/assets/results.txt', data + '\n' + results)
     });
 
     // setup email data with unicode symbols
@@ -107,7 +106,6 @@ app.post('/sendresult', function(req, res) {
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
-    res.send('Success')
 });
 
 // catch 404 and forward to error handler
