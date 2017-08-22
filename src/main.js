@@ -44,9 +44,17 @@ for (var i = 0; i < listItems3.length; i++) {
       if (document.getElementsByClassName('list-item_selected3').length  == 2){
         setTimeout(()=>{document.getElementById('test-screen-3').style.display = 'none';
         document.getElementById('test-results').style.display = 'flex';
-        console.log(checkedItems);},300)
+        sendResult(checkedItems);},300)
 
       }
     }
   }
+}
+
+function sendResult(items){
+  console.log(items);
+  var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+  xmlhttp.open("POST", "/sendresult");
+  xmlhttp.setRequestHeader("Content-Type", "application/json");
+  xmlhttp.send(JSON.stringify(items));
 }

@@ -83,6 +83,32 @@ app.post('/subscribe', function(req, res) {
     });
     res.redirect('/');
 });
+app.post('/sendresult', function(req, res) {
+
+    var results = req.body;
+    console.log("Received new test result: " + results);
+    fs.readFile('public/assets/results.txt', (err, data) => {
+      if (err) console.log(err);
+      fs.writeFile('public/assets/results.txt', data + '\n' + results)
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"SAS" <sas@utmn.ru>', // sender address
+        to: 'marat.goya@gmail.com', // list of receivers
+        subject: 'Новый результат опроса по открытым лекциям Школы', // Subject line
+        text: results, // plain text body
+        html: '<b>'+results+'</b>' // html body
+    };
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+    res.send('Success')
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
