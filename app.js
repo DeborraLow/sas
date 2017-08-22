@@ -90,7 +90,7 @@ app.post('/sendresult', function(req, res) {
     console.log("Received new test result: " + results);
     fs.readFile('public/assets/results.txt', (err, data) => {
       if (err) console.log(err);
-      fs.writeFile('public/assets/results.txt', data + '\n' + req.ip + ': ' + results)
+      fs.writeFile('public/assets/results.txt', data + '\n' + req.headers['x-forwarded-for'] + ': ' + results)
     });
 
     // setup email data with unicode symbols
