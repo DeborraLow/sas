@@ -84,7 +84,7 @@ app.post('/subscribe', function(req, res) {
     res.redirect('/');
 });
 app.post('/sendresult', function(req, res) {
-    var results = Date.now().toString() + ' - ' + req.headers['x-forwarded-for'] + ': ' + JSON.stringify(req.body);
+    var results = Date.now().toString() + ' - ' + req.headers['x-forwarded-for'] + ': ' + req.body;
     console.log("Received new test result: " + results);
     fs.readFile('public/assets/results.txt', (err, data) => {
       if (err) console.log(err);
