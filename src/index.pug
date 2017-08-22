@@ -63,32 +63,40 @@ html(lang="ru")
               p(class="list-item__description") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id
           div(class="arrow arrow_right")
       section(class="test-results")
+        div(class="screen__filter")
         h2(class="h2") Ваш результат:
         ul(class="list list_horizontal")
           li(class="list-item list-item_horizontal")
             img(class="list-item__img" src="assets/thereisnogod.png")
-            h4(class="list-item__header") Наука и религия: конфликт неизбежен?
-            p(class="list-item__description") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. 
+            div(class="list-item__wrapper-horizontal")
+              h4(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
+              p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
           li(class="list-item list-item_horizontal")
             img(class="list-item__img" src="assets/thereisnogod.png")
-            h4(class="list-item__header") Наука и религия: конфликт неизбежен?
-            p(class="list-item__description") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. 
+            div(class="list-item__wrapper-horizontal")
+              h4(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
+              p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
           li(class="list-item list-item_horizontal")
             img(class="list-item__img" src="assets/thereisnogod.png")
-            h4(class="list-item__header") Наука и религия: конфликт неизбежен?
-            p(class="list-item__description") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. 
+            div(class="list-item__wrapper-horizontal")
+              h4(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
+              p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
         div(class="share")
-          h4(class="h4") Поделиться:
-          div(class="social")
-            ul(class="social__list")
-              li(class="social__list-item")
-              li(class="social__list-item")
-          h3(class="h3") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
-          div(class="vk-subcribe")
-          h3(class="h3") Или подпишись на рассылку:
-          form(class="form-subscribe" action="/subscribe" method="post")
-            label(class="form-subscribe__label") E-mail
-              input(type="email" name="email" required="true")
-            label(class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
-              input(type="checkbox")
-            input(type="submit" value="Подписаться")
+          div(class="share-results")
+            h3(class="h3") Поделиться результатом:
+            div(class="social")
+              ul(class="social__list")
+                li(class="social__list-item icon-vkontakte-1")
+                li(class="social__list-item icon-facebook-1")
+          div(class="subscribe")
+            div(class="vk-subcribe")
+              h3(class="h3 h3_align-left") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
+              img(style="margin:20px; width:400px;height:200px;" src="assets/gruppa_Vkontakte-6.gif")
+            div(class="email-subscribe")
+              h3(class="h3 h3_align-left") Или подпишись на рассылку Школы:
+              form(class="form-subscribe" action="/subscribe" method="post")
+                label(class="form-subscribe__label") E-mail
+                  input(type="email" name="email" required="true")
+                label(class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
+                  input(type="checkbox")
+                input(type="submit" value="Подписаться")

@@ -562,9 +562,28 @@ body {
 }
 
 .test-results {
+  background-image:url('003-north-by-northwest-theredlist.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.share {
+  flex-grow: 15;
+  z-index: 9;
+}
+.share-results{
+  display: flex;
+}
+.subscribe{
+  display: flex;
+}
+.form-subscribe{
+  border: 1px white solid;
+  border-radius: 20px;
+  padding:20px;
 }
 
 .logo{
@@ -582,6 +601,12 @@ body {
 .h2 {
   font-size: 30px;
   flex-grow: 1;
+}
+.h3 {
+  font-size: 25px ;
+}
+.h3_align-left{
+  text-align: left;
 }
 
 .header {
@@ -602,6 +627,7 @@ body {
   margin:20px;
   font-size: 30px;
   padding-left: 0;
+  color: $white;
 }
 
 .contacts__list {
@@ -614,22 +640,26 @@ body {
 .test-row {
   flex-grow: 15;
   z-index: 9;
+  display: flex;
 }
 
 .list {
   color: $white;
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
 }
 .list_horizontal {
   display: flex;
-flex-direction: row;
+flex-direction: column;
+flex-grow: 1;
+padding-left: 0;
+z-index: 9;
 }
 .list-item {
   border: 1px white solid;
   border-radius: 20px;
   margin:10px;
+  padding:5px;
   max-width: 30%;
   list-style: none;
   display: flex;
@@ -646,22 +676,26 @@ flex-direction: row;
 }
 .list-item__img {
   align-self: center;
-  width:60px;
+  width:80px;
   border-style: solid;
   border-width: 3px;
-  border-radius: 35px;
+  border-radius: 50px;
   border-color: $white;
 }
 .list-item__header {
   margin: 20px;
+  font-size: 18px;
 }
 .list-item__description{
-  margin:15px;
+  margin:20px;
   width: 100%;
+  font-size: 15px;
 }
 .list-item_horizontal {
   max-width: 100%;
   list-style: none;
+  flex-wrap: nowrap;
+  padding:10px;
 }
 .h1 {
   flex-basis: 50vh;
@@ -674,6 +708,7 @@ flex-direction: row;
 }
 
 .button {
+  outline: none;
   width: 250px;
   height: 75px;
   color: $white;
@@ -686,4 +721,20 @@ flex-direction: row;
 }
 .button:hover{
   cursor: pointer
+}
+.arrow {
+  width: 20px;
+  // position: absolute;
+}
+@media only screen and (max-width:1000px){
+  .test-screen {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width:800px){
+  .list-item__header-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
