@@ -535,10 +535,11 @@ body {
 }
 
 .background{
+  position: absolute;
   background-image:url('003-north-by-northwest-theredlist.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   z-index: -1;
 }
@@ -553,7 +554,7 @@ body {
 }
 
 .screen__filter{
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   position: absolute;
   background-color: rgba(0,0,0,0.6);
@@ -617,7 +618,7 @@ margin:10px ;
   margin:20px;
 }
 
-.h1,.h2,.h3,.list-item__header {
+.h1,.h2,.h3,.list-item__header,.button {
   font-family: 'Agipo Bold';
 }
 
