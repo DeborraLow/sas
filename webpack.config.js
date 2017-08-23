@@ -62,7 +62,7 @@ module.exports = {
 
   plugins: [
     new WebpackShellPlugin({
-  onBuildEnd: ['purifycss ' + path.resolve(__dirname, 'public') + '/main.css' + ' ' + path.resolve(__dirname, 'public') + '/index.html -o . -i -r']
+  onBuildEnd: ['purifycss ' + path.resolve(__dirname, 'public') + '/main.css' + ' ' + path.resolve(__dirname, 'public') + '/index.html -o ./main.css -i']
 }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
