@@ -1,10 +1,18 @@
 import scss from './main.scss';
 //import js from './evercookies.js'
 var checkedItems = [];
+var progress = document.getElementById('progress');
+var progressBar = document.getElementById('progress__bar');
+var background = document.getElementsByClassName('background')[0];
+var screenFilter = document.getElementsByClassName('screen__filter')[0];
 var startButton = document.getElementById('start-button');
 startButton.addEventListener('click', () => {
   document.getElementById('hello-screen').style.display = 'none';
   document.getElementById('test-screen-1').style.display = 'flex';
+  //background.classList.add('background_hidden');
+  progress.style.display = 'block';
+  background.style.minHeight = documentHeight() + 'px';
+  screenFilter.style.minHeight = documentHeight() + 'px';
 })
 var listItems1 = document.querySelectorAll('#test-screen-1 .list-item');
 for (var i = 0; i < listItems1.length; i++) {
@@ -13,8 +21,13 @@ for (var i = 0; i < listItems1.length; i++) {
       this.classList.toggle('list-item_selected1');
       checkedItems.push(parseInt(this.id));
       if (document.getElementsByClassName('list-item_selected1').length  == 2){
-        setTimeout(()=>{  document.getElementById('test-screen-1').style.display = 'none';
-          document.getElementById('test-screen-2').style.display = 'flex';},300)
+        setTimeout(()=>{
+          document.getElementById('test-screen-1').style.display = 'none';
+          document.getElementById('test-screen-2').style.display = 'flex';
+          background.style.minHeight = documentHeight() + 'px';
+          screenFilter.style.minHeight = documentHeight() + 'px';
+          progressBar.style.width = '33.3%';
+        },300)
 
       }
     }
@@ -29,7 +42,9 @@ for (var i = 0; i < listItems2.length; i++) {
       if (document.getElementsByClassName('list-item_selected2').length  == 2){
         setTimeout(()=>{document.getElementById('test-screen-2').style.display = 'none';
         document.getElementById('test-screen-3').style.display = 'flex';},300)
-
+        background.style.minHeight = documentHeight() + 'px';
+        screenFilter.style.minHeight = documentHeight() + 'px';
+        progressBar.style.width = '66.6%';
       }
     }
   }
@@ -42,10 +57,13 @@ for (var i = 0; i < listItems3.length; i++) {
       this.classList.toggle('list-item_selected3');
       checkedItems.push(parseInt(this.id));
       if (document.getElementsByClassName('list-item_selected3').length  == 2){
+        progressBar.style.width = '100%';
+        setTimeout(()=>{progress.style.display = 'none'},1500);
         setTimeout(()=>{document.getElementById('test-screen-3').style.display = 'none';
-        document.getElementById('test-results').style.display = 'flex';
+        document.getElementById('test-results').style.display = 'block';
+        background.style.minHeight = documentHeight() + 'px';
+        screenFilter.style.minHeight = documentHeight() + 'px';
         sendResult(checkedItems);},300)
-
       }
     }
   }
@@ -57,4 +75,14 @@ function sendResult(items){
   xmlhttp.open("POST", "/sendresult");
   xmlhttp.setRequestHeader("Content-Type", "application/json");
   xmlhttp.send(JSON.stringify(items));
+}
+
+function documentHeight() {
+    return Math.max(
+      document.documentElement.clientHeight,
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight
+    );
 }

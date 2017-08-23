@@ -10,6 +10,8 @@ html(lang="ru")
     main
       div(class="background")
         div(class="screen__filter")
+      div(class="progress" id="progress")
+        div(class="progress__bar" id="progress__bar")
       section(class="hello-screen" id="hello-screen")
         header(class="header")
           div(class="logo")
@@ -24,7 +26,7 @@ html(lang="ru")
               ul(class="contacts__list")
                 li(class="contacts__list-item") sas@utmn.ru
                 li(class="contacts__list-item") +7 911 11 11 11
-        h1(class="h1") Школа перспективных исследований запускает программу открытых лекций. Пройди наш тест и узнай, какой киношедевр по рекомендации экспертов тебе подходит
+        h1(class="h1") Школа перспективных исследований запускает программу открытых лекций. Пройди наш тест и получи рекомендацию экспертов о том, какой киношедевр тебе подходит
         button(class="button" id="start-button") Начать тест
       section(class="test-screen" id="test-screen-1")
         h2(class="h2") Выбери по два курса из каждого списка:
@@ -39,7 +41,7 @@ html(lang="ru")
             li(class="list-item" id="2")
               div(class="list-item__header-wrapper")
                 img(class="list-item__img" src="assets/thereisnogod.png")
-                h4(class="list-item__header") «Эпоха тотальной войны» – глобальный конфликт в коротком 20-м веке, 1914–1991 гг. Томаш Блушевич
+                h4(class="list-item__header") «Эпоха тотальной войны» – глобальный конфликт в коротком 20-м веке, 1914–1991 гг. 
               p(class="list-item__description") Чем мировая война отличается от обычной? И когда начнется третья? 
   
             li(class="list-item" id="3")
@@ -139,18 +141,18 @@ html(lang="ru")
         h2(class="h2") Ваш результат:
         ul(class="list list_results")
           li(class="list-item list-item_results")
-            img(class="list-item__img list-item__img_results" src="assets/thereisnogod.png")
-            div(class="list-item__header-wrapper list-item__header-wrapper_results")
+            div(class="list-item__header-wrapper")
+              img(class="list-item__img list-item__img_results" src="assets/thereisnogod.png")
               h4(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
-              p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
+            p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
           li(class="list-item list-item_results")
-            img(class="list-item__img list-item__img_results" src="assets/thereisnogod.png")
-            div(class="list-item__header-wrapper list-item__header-wrapper_results")
+            div(class="list-item__header-wrapper")
+              img(class="list-item__img list-item__img_results" src="assets/thereisnogod.png")
               h4(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
-              p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
+            p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»      
         div(class="share")
           div(class="share-results")
-            h3(class="h3 h3_align-left h3_margin10") Поделиться результатом:
+            h3(class="h3 h3_align-left h3_margin10") Поделиться:
             div(class="social")
               ul(class="social__list social__list_margin10")
                 li(class="social__list-item icon-vkontakte-1")
@@ -160,7 +162,7 @@ html(lang="ru")
                 h3(class="h3 h3_align-left h3_margin10") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
                 img(style="margin:10px 20px; width:300px;height:200px;" src="assets/gruppa_Vkontakte-6.gif")
           div(class="email-subscribe")
-            h3(class="h3 h3_align-left") Или подпишись на рассылку Школы:
+            h3(class="h3 h3_align-left") Подпишись на рассылку Школы:
             form(class="form-subscribe" action="/subscribe" method="post")
               label(class="form-subscribe__label") E-mail
                 input(class="form-subscribe__input" type="email" name="email" required="true")
