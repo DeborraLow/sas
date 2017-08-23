@@ -3,9 +3,9 @@ const path = require('path');
 const glob = require('glob');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 const extractSass = new ExtractTextPlugin({
-  filename: "[name].[contenthash].css"
+  filename: "[name].css?[contenthash]"
   // , disable: process.env.NODE_ENV === "development"
 });
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -33,10 +33,10 @@ module.exports = {
           }
         }
       }
-      // , {
-      //   test: /\.css$/,
-      //   use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
-      // }
+      , {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
+      }
       , {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: ['file-loader?hash=sha512&digest=hex&name=[hash].[ext]', 'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false']
@@ -50,15 +50,9 @@ module.exports = {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: "file-loader"
       }, {
-        test: /\.scss$/,
+        test: /\.(scss|sass)$/,
         use: extractSass.extract({
-          use: [
-            {
-              loader: "css-loader"
-            }, {
-              loader: "sass-loader"
-            }
-          ],
+          use: ['css-loader','sass-loader'],
           // use style-loader in development
           fallback: "style-loader"
         })
@@ -67,6 +61,9 @@ module.exports = {
   },
 
   plugins: [
+    new WebpackShellPlugin({
+  onBuildEnd: ['purifycss ' + path.resolve(__dirname, 'public') + '/main.css' + ' ' + path.resolve(__dirname, 'public') + '/index.html -o . -i -r']
+}),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       favicon: './public/favicon.ico',
@@ -82,13 +79,7 @@ module.exports = {
       exclude: ['favicon.ico', 'assets']
     }),
     extractSass,
-    new ExtractTextPlugin('[name].[contenthash].css')
-    // ,
-    // new PurifyCSSPlugin({
-    //   // Give paths to parse for rules. These should be absolute!
-    //   paths: [path.join(__dirname, 'index.html')]
-    //
-    // })
+
     //     new JavaScriptObfuscator ({
     // 	compact: true,
     // 	controlFlowFlattening: false,
