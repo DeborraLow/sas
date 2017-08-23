@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
+const glob = require('glob');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 const extractSass = new ExtractTextPlugin({
   filename: "[name].[contenthash].css"
   // , disable: process.env.NODE_ENV === "development"
@@ -30,10 +32,12 @@ module.exports = {
             presets: ['env']
           }
         }
-      }, {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
-      }, {
+      }
+      // , {
+      //   test: /\.css$/,
+      //   use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
+      // }
+      , {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: ['file-loader?hash=sha512&digest=hex&name=[hash].[ext]', 'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false']
       }, {
@@ -63,7 +67,6 @@ module.exports = {
   },
 
   plugins: [
-    extractSass,
     new HtmlWebpackPlugin({
       filename: 'index.html',
       favicon: './public/favicon.ico',
@@ -78,6 +81,14 @@ module.exports = {
       dry: false,
       exclude: ['favicon.ico', 'assets']
     }),
+    extractSass,
+    new ExtractTextPlugin('[name].[contenthash].css')
+    // ,
+    // new PurifyCSSPlugin({
+    //   // Give paths to parse for rules. These should be absolute!
+    //   paths: [path.join(__dirname, 'index.html')]
+    //
+    // })
     //     new JavaScriptObfuscator ({
     // 	compact: true,
     // 	controlFlowFlattening: false,

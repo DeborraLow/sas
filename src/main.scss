@@ -601,6 +601,7 @@ body {
 }
 .form-subscribe{
   color: $white;
+  font-family: "Agipo Regular";
   display: flex;
   flex-direction: column;
   border: 1px $white05 solid;
@@ -608,8 +609,12 @@ body {
   padding:10px;
   margin:10px 20px;
 }
-.form-subscribe__label,.form-subscribe__input{
+.form-subscribe__label{
 margin:10px ;
+}
+.form-subscribe__input{margin:10px ;
+  border-radius: 15px;
+  outline: none;
 }
 
 .logo{
@@ -755,7 +760,6 @@ justify-content: space-around;
 }
 .list-item__description{
   margin:10px;
-  width: 100%;
   font-size: 15px;
   font-family: 'Agipo Regular';
 }
@@ -920,6 +924,7 @@ transition: width 0.6s ease;
   height:200px;
 
 }
+.h1 span {display: block;}
 
 
 @media only screen and (max-width:1000px){
