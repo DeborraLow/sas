@@ -61,6 +61,8 @@ for (var i = 0; i < listItems3.length; i++) {
         setTimeout(()=>{progress.style.display = 'none'},1500);
         setTimeout(()=>{document.getElementById('test-screen-3').style.display = 'none';
         document.getElementById('test-results').style.display = 'block';
+        background.style.minHeight = document.documentElement.clientHeight + 'px';
+        screenFilter.style.minHeight = document.documentElement.clientHeight + 'px';
         background.style.minHeight = documentHeight() + 'px';
         screenFilter.style.minHeight = documentHeight() + 'px';
         sendResult(checkedItems);},300)
