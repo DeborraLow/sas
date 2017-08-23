@@ -3,6 +3,7 @@ var path = require('path');
 var env = process.env;
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var compression = require('compression')
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -43,11 +44,7 @@ app.use(cookieParser());
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(compression({
-threshold: 0,
-filter: function () { return true; },
-level: -1
-}));
+app.use(compression());
 
 app.use('/', index);
 //openshift health app test
