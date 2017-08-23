@@ -43,6 +43,12 @@ app.use(cookieParser());
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(compression({
+threshold: 0,
+filter: function () { return true; },
+level: -1
+}));
+
 app.use('/', index);
 //openshift health app test
 app.get('/health', function(req, res) {
