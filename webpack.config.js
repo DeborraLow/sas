@@ -15,7 +15,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.[hash].js'
+    filename: 'bundle.js?[hash]'
   },
   devServer: {
     contentBase: './public'
@@ -61,9 +61,9 @@ module.exports = {
   },
 
   plugins: [
-//     new WebpackShellPlugin({
-//   onBuildEnd: ['purifycss ' + path.resolve(__dirname, 'public') + '/main.css' + ' ' + path.resolve(__dirname, 'public') + '/index.html -o ' + path.resolve(__dirname, 'public') + '/main.css -i -m']
-// }),
+    new WebpackShellPlugin({
+  onBuildEnd: ['purifycss ' + path.resolve(__dirname, 'public') + '/main.css ' +  path.resolve(__dirname, 'public') + '/index.html ' + path.resolve(__dirname, 'public') + '/bundle.js' + ' -o ' + path.resolve(__dirname, 'public') + '/main.css -i -m']
+}),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       favicon: './public/favicon.ico',
