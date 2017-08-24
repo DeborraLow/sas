@@ -24,6 +24,11 @@ html.fp-enabled,
     /* IE 11 on Windows Phone 8.1*/
     touch-action: none;
 }
+.fp-section.active {
+	visibility: visible;
+	opacity: 1;
+	z-index: 1;
+}
 .fp-section {
   width: 100%!important;
 	position: absolute;
@@ -31,7 +36,7 @@ html.fp-enabled,
 	top: 0;
 	visibility: hidden;
 	opacity: 0;
-	/*z-index: 0;*/
+	z-index: 0;
 	transition: all .7s ease-in-out;
 
     -webkit-box-sizing: border-box; /* Safari<=5 Android<=3 */
@@ -201,9 +206,4 @@ html.fp-enabled,
 }
 #fp-nav ul li .fp-tooltip.left {
     left: 20px;
-}
-.fp-section.active {
-	visibility: visible;
-	opacity: 1;
-	z-index: 1;
 }
