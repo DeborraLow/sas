@@ -24,6 +24,16 @@ function showButton(button){
       button.classList.remove('button_hidden');
     }, 2000)
 }};
+window.onload = ()=>{
+  var sections = document.querySelectorAll('.fp-section');
+  document.querySelector('.activeSection').classList.add('activeSection');;
+   for (i=0;i<sections.length;i++){
+     console.log(sections[i]);
+    //  sections[i].classList.remove('fp-section');
+     sections[i].classList.add('fp-section');
+     }
+}
+
 var buttonStart = document.getElementById('start-button');
 showButton(buttonStart);
 if ("onhashchange" in window) {
