@@ -7,12 +7,8 @@ html(lang="ru")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     title Школа перспективных исследований
   body
-    main
-      div(class="background")
-        div(class="screen__filter")
-      div(class="progress" id="progress")
-        div(class="progress__bar" id="progress__bar")
-      section(class="hello-screen" id="hello-screen")
+    main(id="fullpage")
+      section(class="hello-screen section" id="hello-screen" data-anchor="firstPage")
         header(class="header")
           div(class="logo")
             img(class="logo__img" src="/assets/SAS__logo_small_blue.png")
@@ -26,9 +22,25 @@ html(lang="ru")
               ul(class="contacts__list")
                 li(class="contacts__list-item") sas@utmn.ru
                 li(class="contacts__list-item") +7 911 11 11 11
+        //- h1(class="h1") Школа перспективных исследований запускает программу открытых лекций.<br/>Пройди наш тест и получи рекомендацию экспертов о том, какой киношедевр тебе подходит
+        //- button(class="button" id="start-button") Начать тест
+      section(class="presentation-screen section" id="presentation-screen" data-anchor="secondPage")
+        //- header(class="header")
+          div(class="logo")
+            img(class="logo__img" src="/assets/SAS__logo_small_blue.png")
+          div(class="contacts-block")
+            div(class="social")
+              ul(class="social__list")
+                li(class="social__list-item icon-vkontakte-1")
+                li(class="social__list-item icon-facebook-1")
+                li(class="social__list-item icon-instagram")
+            div(class="contacts")
+              ul(class="contacts__list")
+                li(class="contacts__list-item") sas@utmn.ru
+                li(class="contacts__list-item") +7 911 11 11 11
         h1(class="h1") Школа перспективных исследований запускает программу открытых лекций.<br/>Пройди наш тест и получи рекомендацию экспертов о том, какой киношедевр тебе подходит
-        button(class="button" id="start-button") Начать тест
-      section(class="test-screen" id="test-screen-1")
+        button(class="button button_hidden" id="start-button") Начать тест
+      section(class="test-screen section" id="test-screen-1" data-anchor="thirdPage")
         h2(class="h2") Выбери по два курса из каждого списка:
         div(class="test-row")
           div(class="arrow arrow_left")
@@ -43,7 +55,7 @@ html(lang="ru")
                 img(class="list-item__img" src="assets/thereisnogod.png")
                 h4(class="list-item__header") «Эпоха тотальной войны» – глобальный конфликт в коротком 20-м веке. Томаш Блушевич
               p(class="list-item__description") Чем мировая война отличается от обычной? И когда начнется третья? 
-  
+
             li(class="list-item" id="3")
               div(class="list-item__header-wrapper")
                 img(class="list-item__img" src="assets/thereisnogod.png")
@@ -171,3 +183,7 @@ html(lang="ru")
               input(id="agreement-checkbox" type="checkbox")
               label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
               input(class="form-subscribe__submit button" type="submit" value="Подписаться")
+    //- div(class="background")
+    div(class="screen__filter")
+    div(class="progress" id="progress")
+      div(class="progress__bar" id="progress__bar")

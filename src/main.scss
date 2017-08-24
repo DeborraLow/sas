@@ -531,14 +531,17 @@ template {
 }
 
 body {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,1);
 }
 
 .background{
-  background-image:url('003-north-by-northwest-theredlist.jpg');
+  position: absolute;
+  top: 0;
+  background-image:url('Columbia.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 100vw;
+  width: 100vw;
   height: 100vh;
   z-index: -1;
 }
@@ -550,12 +553,24 @@ body {
   display: flex;
     flex-direction: column;
     align-items: center;
+    background-image:url('Columbia.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.presentation-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  	visibility: hidden;
+  	opacity: 0;
+
+
 }
 
 .screen__filter{
   max-width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.6);
+  //background-color: rgba(0,0,0,0.6);
   z-index: 0
 }
 .test-screen {
@@ -773,7 +788,7 @@ justify-content: space-around;
   background-color: rgba(0,0,0,0.6);
 }
 .h1 {
-  flex-basis: 50vh;
+  //flex-basis: 50vh;
   text-align: center;
   margin:auto;
   color:$white;
@@ -794,6 +809,13 @@ justify-content: space-around;
   z-index: 9;
   margin:20px 20px 40px 20px;
   font-size: 25px;
+}
+.button_hidden{
+  opacity:0;
+}
+.button_visible{
+  opacity:1;
+  transition: opacity 0.5s;
 }
 .button:hover{
   cursor: pointer
