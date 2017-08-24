@@ -22,7 +22,7 @@
     var DESTROYED =             'fp-destroyed';
     var ENABLED =               'fp-enabled';
     var VIEWING_PREFIX =        'fp-viewing';
-    var ACTIVE =                'active';
+    var ACTIVE =                'activeSection';
     var ACTIVE_SEL =            '.' + ACTIVE;
 
     // section

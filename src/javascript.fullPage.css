@@ -24,7 +24,7 @@ html.fp-enabled,
     /* IE 11 on Windows Phone 8.1*/
     touch-action: none;
 }
-.fp-section.active {
+.activeSection {
 	visibility: visible;
 	opacity: 1;
 	z-index: 1;
