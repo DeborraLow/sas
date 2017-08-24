@@ -26,11 +26,17 @@ function showButton(button){
 }};
 window.onload = ()=>{
   var sections = document.querySelectorAll('.fp-section');
-  document.querySelector('.activeSection').classList.add('activeSection');;
+  var act = document.querySelector('.activeSection');
+
+act.style.display='none';
+act.offsetHeight; // no need to store this anywhere, the reference is enough
+act.style.display='block';
    for (i=0;i<sections.length;i++){
      console.log(sections[i]);
     //  sections[i].classList.remove('fp-section');
-     sections[i].classList.add('fp-section');
+     sections[i].style.display='none';
+sections[i].offsetHeight; // no need to store this anywhere, the reference is enough
+sections[i].style.display='block';
      }
 }
 
