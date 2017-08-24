@@ -44,6 +44,11 @@ html.fp-enabled,
     box-sizing: border-box;
     height:100%;
 }
+.activeSection {
+	visibility: visible;
+	opacity: 1;
+	z-index: 1;
+}
 .fp-slide {
     float: left;
 }
