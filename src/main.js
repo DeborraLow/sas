@@ -17,35 +17,35 @@ initialize('#fullpage', {
   menu: '#menu',
   css3: false
 });
-function showButton(button){
+function showButton(button) {
   if (location.hash === "#secondPage") {
     window.setTimeout(() => {
       button.classList.add('button_visible');
       button.classList.remove('button_hidden');
     }, 2000)
-}};
-window.onload = ()=>{
-  var sections = document.querySelectorAll('.fp-section');
-  var act = document.querySelector('.activeSection');
-
-act.style.visibility='visible';
-
-act.offsetHeight; // no need to store this anywhere, the reference is enough
-act.style.opacity='1';
-   for (i=0;i<sections.length;i++){
-     console.log(sections[i]);
-     visibility: visible;
-    //  sections[i].classList.remove('fp-section');
-     sections[i].style.visibility='hidden';
-sections[i].offsetHeight; // no need to store this anywhere, the reference is enough
-sections[i].style.opacity='0';
-     }
-}
+  }
+};
+  // var sections = document.querySelectorAll('.fp-section');
+  // var act = document.querySelector('.activeSection');
+  //
+  // for (i = 0; i < sections.length; i++) {
+  //   console.log(sections[i]);
+  //   visibility : visible;
+  //   //  sections[i].classList.remove('fp-section');
+  //   sections[i].style.visibility = 'hidden';
+  //   sections[i].offsetHeight; // no need to store this anywhere, the reference is enough
+  //   sections[i].style.opacity = '';
+  // }
+  // act.style.visibility='visible';
+  // act.offsetHeight; // no need to store this anywhere, the reference is enough
+  // act.style.opacity='1';
 
 var buttonStart = document.getElementById('start-button');
 showButton(buttonStart);
 if ("onhashchange" in window) {
-  window.onhashchange = ()=>{showButton(buttonStart);}
+  window.onhashchange = () => {
+    showButton(buttonStart);
+  }
 } else {
   showButton(buttonStart);
 }
