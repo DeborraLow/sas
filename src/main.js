@@ -28,15 +28,17 @@ window.onload = ()=>{
   var sections = document.querySelectorAll('.fp-section');
   var act = document.querySelector('.activeSection');
 
-act.style.display='none';
+act.style.visibility='visible';
+
 act.offsetHeight; // no need to store this anywhere, the reference is enough
-act.style.display='block';
+act.style.opacity='1';
    for (i=0;i<sections.length;i++){
      console.log(sections[i]);
+     visibility: visible;
     //  sections[i].classList.remove('fp-section');
-     sections[i].style.display='none';
+     sections[i].style.visibility='hidden';
 sections[i].offsetHeight; // no need to store this anywhere, the reference is enough
-sections[i].style.display='block';
+sections[i].style.opacity='0';
      }
 }
 
