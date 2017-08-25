@@ -81,8 +81,8 @@ startButton.addEventListener('click', () => {
   progressBar.style.display = 'block';
   window.location.href = '#test1';
   fullpage.moveSectionDown();
-  document.getElementById('presentation-screen').classList.remove('activeSection')
-  document.getElementById('test-screen-1').classList.add('activeSection');
+  // document.getElementById('presentation-screen').classList.remove('activeSection')
+  // document.getElementById('test-screen-1').classList.add('activeSection');
   // background.style.minHeight = documentHeight() + 'px';
   // screenFilter.style.minHeight = documentHeight() + 'px';
 })
@@ -110,8 +110,9 @@ endButton.addEventListener('click',()=>{
      sendResult(checkedItems);
      window.location.href = '#test-results'
      fullpage.moveSectionDown();
-     document.getElementById('test-screen-3').classList.remove('activeSection')
-     document.getElementById('test-results').classList.add('activeSection');
+     fullpage = undefined;
+    //  document.getElementById('test-screen-3').classList.remove('activeSection')
+    //  document.getElementById('test-results').classList.add('activeSection');
    }
 })
 
