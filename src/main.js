@@ -108,7 +108,7 @@ endButton.addEventListener('click',()=>{
      sendResult(checkedItems);
      window.location.href = '#test-results'
      fullpage.moveSectionDown();
-     fullpage.destroy('all');
+    //  fullpage.destroy('all');
     //  document.getElementById('test-screen-3').classList.remove('activeSection')
     //  document.getElementById('test-results').classList.add('activeSection');
    }

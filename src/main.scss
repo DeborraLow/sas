@@ -545,6 +545,44 @@ body {
   height: 100vh;
   z-index: -1;
 }
+.hello-screen::before,.presentation-screen::before,.test-screen::before,.test-results::before{
+
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -2;
+
+  display: block;
+  // background-image: url('3018_hd-nowm.jpg');
+  background-image: url('giphy.gif');
+
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+
+  -webkit-filter: brightness(50%);
+  -moz-filter: brightness(50%);
+  -o-filter: brightness(50%);
+  -ms-filter: brightness(50%);
+  filter: brightness(50%);
+}
+
+.hello-screen::before{
+  -webkit-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  -ms-filter: none;
+  filter: none;
+}
+
+// .content {
+//   position: fixed;
+//   left: 0;
+//   right: 0;
+//   z-index: 0;
+//   margin-left: 20px;
+//   margin-right: 20px;
 
 .hello-screen {
   position: absolute;
@@ -553,8 +591,8 @@ body {
   display: flex;
     flex-direction: column;
     align-items: center;
-    background-image:url('Columbia.jpg');
-    background-size: contain;
+    // background-image:url('Columbia.jpg');
+    // background-size: contain;
     background-repeat: no-repeat;
 }
 .presentation-screen{
@@ -1019,6 +1057,8 @@ transition: width 0.6s ease;
 }
 @media only screen and (max-width:600px){
   .hello-screen,.presentation-screen,.test1,.test2,.test3,.test-results{
+    background-image: url('3018_hd-nowm.jpg');
+
     height: auto;
   }
   .vk-subcribe img {
