@@ -598,8 +598,13 @@ body {
 }
 .results{
   display: flex;
-  flex-grow: 20;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-grow: 100;
+  justify-content: space-around;
+  // flex-wrap: wrap;
+}
+.result__wrapper{
+  max-width: 40%;
 }
 .share {
   flex-grow: 1;
@@ -607,9 +612,9 @@ body {
   display: flex;
 }
 .share-results{
-
+  align-self: flex-start;
   border-radius: 20px;
-  margin: 0 20px;
+  // margin: 0 20px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -626,7 +631,8 @@ body {
   color: $white;
   font-family: "Agipo Regular";
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  flex-wrap: wrap;
   border: 1px $white05 solid;
   border-radius: 20px;
   padding:10px;
@@ -634,6 +640,8 @@ body {
 }
 .form-subscribe__label{
 margin:10px ;
+min-width: 20%;
+    max-width: 30%;
 }
 .form-subscribe__input{margin:10px ;
   border-radius: 15px;
@@ -662,7 +670,7 @@ margin:10px ;
   flex-grow: 1;
 }
 .h3 {
-  font-size: 25px ;
+  font-size: 20px ;
 }
 .h3_align-left{
   text-align: left;
@@ -724,8 +732,10 @@ margin:10px ;
 .list_results {
   flex-wrap: nowrap;
   flex-grow: 10;
+  flex-direction: column;
 justify-content: space-around;
 min-height: 230px;
+max-width: 75%;
 }
 .list_horizontal {
   display: flex;
@@ -756,6 +766,7 @@ justify-content: space-around;
 }
 .list-item__header-wrapper_results {
   flex-direction: column;
+  flex-wrap: wrap;
 }
 .list-item__img {
   align-self: center;
@@ -766,17 +777,23 @@ justify-content: space-around;
   border-color: $white;
 }
 .list-item_results{
-  flex-wrap: wrap;
+    border: none;
+  // flex-wrap: wrap;
   flex-direction: row;
-  min-width: 45%;
+  min-width: 100%;
 }
 .list-item__img_results{
-  width: 100px;
+  align-self: flex-start;
+  width: 50%;
+  height: auto;
   margin:0 10px 0 0;
+  border-width: 1px;
+  border-radius: 20px;
 }
 .list-item__header {
   margin: 10px;
   font-size: 18px;
+  color: $white;
 }
 .list-item__header_horizontal{
   margin:10px;
@@ -784,6 +801,7 @@ justify-content: space-around;
 .list-item__description{
   margin:10px;
   font-size: 15px;
+  color: $white;
   font-family: 'Agipo Regular';
 }
 .list-item_horizontal {
@@ -793,7 +811,7 @@ justify-content: space-around;
   padding:10px;
 }
 .list-item_selected{
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(100,100,100,0.6);
 }
 .h1 {
   //flex-basis: 50vh;
@@ -817,6 +835,13 @@ justify-content: space-around;
   z-index: 9;
   margin:20px 20px 40px 20px;
   font-size: 25px;
+}
+.button_small{
+  width: 100%;
+  min-width: 100px;
+  max-width: 200px;
+  height: 50px;
+  font-size: 20px;
 }
 .button_disabled {
   background-color: grey;
@@ -993,6 +1018,9 @@ transition: width 0.6s ease;
 
 }
 @media only screen and (max-width:600px){
+  .hello-screen,.presentation-screen,.test1,.test2,.test3,.test-results{
+    height: auto;
+  }
   .vk-subcribe img {
     margin:10px 20px;
     max-width: 250px;

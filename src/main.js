@@ -13,13 +13,11 @@ var lastScrollTop = 0;
 
 initialize('#fullpage', {
   anchors: [
-    'firstPage', 'secondPage'
-  ],
-  menu: '#menu',
-  css3: false
+    'start', 'presentation','test1','test2','test3'
+  ]
 });
 function showButton(button) {
-  if (location.hash === "#secondPage") {
+  if (location.hash === "#presentation") {
     progress.style.display = 'none';
     progressBar.style.display = 'none';
     window.setTimeout(() => {
@@ -110,7 +108,7 @@ endButton.addEventListener('click',()=>{
      sendResult(checkedItems);
      window.location.href = '#test-results'
      fullpage.moveSectionDown();
-     fullpage = undefined;
+     fullpage.destroy('all');
     //  document.getElementById('test-screen-3').classList.remove('activeSection')
     //  document.getElementById('test-results').classList.add('activeSection');
    }
