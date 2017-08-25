@@ -566,8 +566,11 @@ body {
   -ms-filter: brightness(50%);
   filter: brightness(50%);
 }
-
-.hello-screen::before{
+// .presentation-screen::before{
+//   background:none;
+//   background-color:rgba(0,0,0,0);
+// }
+.hello-screen::before,.presentation-screen::before{
   background-image: url('ezgif.com-crop.gif');
 
   -webkit-filter: none;
@@ -861,8 +864,13 @@ justify-content: space-around;
   margin:auto;
   color:$white;
   z-index: 9;
-  margin:auto 10vw;
+  margin:auto 0;
   font-size: 40px;
+}
+.h1_hello{
+  padding-bottom: 150px;
+  opacity:0;
+  transition: opacity 2s;
 }
 
 .button {

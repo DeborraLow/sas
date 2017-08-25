@@ -10,6 +10,12 @@ var screenFilter = document.getElementsByClassName('screen__filter')[0];
 var startButton = document.getElementById('start-button');
 var endButton = document.getElementById('end-button');
 var lastScrollTop = 0;
+window.onload = ()=>{
+  window.setTimeout(()=>{document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
+},2000)
+window.setTimeout(()=>{fullpage.moveSectionDown();
+},7000)
+}
 
 initialize('#fullpage', {
   anchors: [
@@ -71,7 +77,9 @@ if ("onhashchange" in window) {
   }
 } else {
   window.onload = ()=>{showButton(buttonStart);
-  progressBarHandler();}
+  progressBarHandler();
+  document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
+}
 }
 
 startButton.addEventListener('click', () => {
