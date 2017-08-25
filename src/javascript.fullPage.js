@@ -2161,4 +2161,3 @@
         setRecordHistory: setRecordHistory,
         setScrollingSpeed: setScrollingSpeed
     };
-    console.log(fullpage.initialize);

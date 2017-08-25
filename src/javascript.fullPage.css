@@ -31,11 +31,11 @@ html.fp-enabled,
 }
 .fp-section {
   width: 100%!important;
-	position: absolute;
-	left: 0;
+	position: relative;
+	/*left: 0;
 	top: 0;
 	visibility: hidden;
-	opacity: 0;
+	opacity: 0;*/
 	/*z-index: 0;*/
 	transition: all .7s ease-in-out;
 
@@ -45,7 +45,6 @@ html.fp-enabled,
     height:100%;
 }
 .activeSection {
-  transform: translateZ(0);
 	visibility: visible;
 	opacity: 1;
 	z-index: 1;

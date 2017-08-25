@@ -8,7 +8,7 @@ html(lang="ru")
     title Школа перспективных исследований
   body
     main(id="fullpage")
-      section(class="hello-screen section" id="hello-screen" data-anchor="firstPage")
+      section(class="hello-screen section" id="hello-screen" data-anchor="start")
         header(class="header")
           div(class="logo")
             img(class="logo__img" src="/assets/SAS__logo_small_blue.png")
@@ -24,7 +24,7 @@ html(lang="ru")
                 li(class="contacts__list-item") +7 911 11 11 11
         //- h1(class="h1") Школа перспективных исследований запускает программу открытых лекций.<br/>Пройди наш тест и получи рекомендацию экспертов о том, какой киношедевр тебе подходит
         //- button(class="button" id="start-button") Начать тест
-      section(class="presentation-screen section" id="presentation-screen" data-anchor="secondPage")
+      section(class="presentation-screen section" id="presentation-screen" data-anchor="presentation")
         //- header(class="header")
           div(class="logo")
             img(class="logo__img" src="/assets/SAS__logo_small_blue.png")
@@ -40,10 +40,9 @@ html(lang="ru")
                 li(class="contacts__list-item") +7 911 11 11 11
         h1(class="h1") Школа перспективных исследований запускает программу открытых лекций.<br/>Пройди наш тест и получи рекомендацию экспертов о том, какой киношедевр тебе подходит
         button(class="button button_hidden" id="start-button") Начать тест
-      section(class="test-screen section" id="test-screen-1" data-anchor="thirdPage")
-        h2(class="h2") Выбери по два курса из каждого списка:
+      section(class="test-screen section" id="test-screen-1" data-anchor="test1")
+        h2(class="h2") Выбери лекции, которые тебе интересны:
         div(class="test-row")
-          div(class="arrow arrow_left")
           ul(class="list")
             li(class="list-item" id="1")
               div(class="list-item__header-wrapper")
@@ -78,11 +77,9 @@ html(lang="ru")
                 img(class="list-item__img" src="assets/thereisnogod.png")
                 h4(class="list-item__header") История кино. Оксана Булгакова
               p(class="list-item__description") Вторая звуковая революция, голливудские студии, нуар, авторское кино и глобализация.
-          div(class="arrow arrow_right")
-      section(class="test-screen" id="test-screen-2")
-        h2(class="h2") Выбери по два курса из каждого списка:
+      section(class="test-screen section" id="test-screen-2" data-anchor="test2")
+        h2(class="h2") Выбери лекции, которые тебе интересны:
         div(class="test-row")
-          div(class="arrow arrow_left")
           ul(class="list")
             li(class="list-item" id="7")
               div(class="list-item__header-wrapper")
@@ -114,11 +111,9 @@ html(lang="ru")
                 img(class="list-item__img" src="assets/thereisnogod.png")
                 h4(class="list-item__header") Право и любовь. Закари Рейна
               p(class="list-item__description") Каковы отношения между правом и любовью? Каково место любви в праве и место права в любви? Можем ли право быть похожим на любовь?
-          div(class="arrow arrow_right")
-      section(class="test-screen" id="test-screen-3")
-        h2(class="h2") Выбери по два курса из каждого списка:
+      section(class="test-screen section" id="test-screen-3" data-anchor="test3")
+        h2(class="h2") Выбери лекции, которые тебе интересны:
         div(class="test-row")
-          div(class="arrow arrow_left")
           ul(class="list")
             li(class="list-item" id="13")
               div(class="list-item__header-wrapper")
@@ -150,31 +145,27 @@ html(lang="ru")
                 img(class="list-item__img" src="assets/thereisnogod.png")
                 h4(class="list-item__header") Экология, технологии и аниме. Даскин Драм
               p(class="list-item__description") Изменения климата, генная инженерия, киборгизация, биоэтика и вымирание. Изучение этих и других проблем на материале японского аниме и манги.
-          div(class="arrow arrow_right")
-      section(class="test-results" id="test-results")
-        h2(class="h2") Ваш результат:
-        ul(class="list list_results")
-          li(class="list-item list-item_results")
-            div(class="list-item__header-wrapper")
-              img(class="list-item__img list-item__img_results" src="assets/thereisnogod.png")
-              h4(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
-            p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
-          li(class="list-item list-item_results")
-            div(class="list-item__header-wrapper")
-              img(class="list-item__img list-item__img_results" src="assets/thereisnogod.png")
-              h4(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
-            p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»      
-        div(class="share")
+        button(class="button button_disabled" id="end-button" ) Узнать результат
+      section(class="test-results section" id="test-results" data-anchor="test-results")
+        h2(class="h2") Поздравляем! Твой результат:
+        div(class="results")
+          ul(class="list list_results")
+            li(class="list-item list-item_results")
+              div(class="list-item__header-wrapper")
+                img(class="list-item__img list-item__img_results" src="assets/thereisnogod.png")
+                h4(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
+              p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
           div(class="share-results")
             h3(class="h3 h3_align-left h3_margin10") Поделиться:
             div(class="social")
               ul(class="social__list social__list_margin10")
                 li(class="social__list-item icon-vkontakte-1")
                 li(class="social__list-item icon-facebook-1")
-            div(class="subscribe")
-              div(class="vk-subcribe")
-                h3(class="h3 h3_align-left h3_margin10") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
-                img(style="margin:10px 20px; width:300px;height:200px;" src="assets/gruppa_Vkontakte-6.gif")
+        div(class="share")
+          div(class="subscribe")
+            div(class="vk-subcribe")
+              h3(class="h3 h3_align-left h3_margin10") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
+              img(style="margin:10px 20px; width:300px;height:200px;" src="assets/gruppa_Vkontakte-6.gif")
           div(class="email-subscribe")
             h3(class="h3 h3_align-left") Подпишись на рассылку Школы:
             form(class="form-subscribe" action="/subscribe" method="post")

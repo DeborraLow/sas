@@ -580,7 +580,9 @@ body {
   display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-  display:none;
+  visibility: hidden;
+  opacity: 0;
+  justify-content: center;
 }
 
 .test-results {
@@ -590,11 +592,17 @@ body {
     height: 100vh;
     display: block;
     flex-direction: column;
-    display:none;
+    display:flex;
+    visibility: hidden;
+    opacity: 0;
 }
-
+.results{
+  display: flex;
+  flex-grow: 20;
+  flex-wrap: wrap;
+}
 .share {
-  flex-grow: 10;
+  flex-grow: 1;
   z-index: 9;
   display: flex;
 }
@@ -784,7 +792,7 @@ justify-content: space-around;
   flex-wrap: nowrap;
   padding:10px;
 }
-.list-item_selected1,.list-item_selected2,.list-item_selected3{
+.list-item_selected{
   background-color: rgba(0,0,0,0.6);
 }
 .h1 {
@@ -799,7 +807,7 @@ justify-content: space-around;
 
 .button {
   outline: none;
-  min-width: 200px;
+  min-width: 300px;
   max-width: 400px;
   height: 75px;
   color: $white;
@@ -809,6 +817,10 @@ justify-content: space-around;
   z-index: 9;
   margin:20px 20px 40px 20px;
   font-size: 25px;
+}
+.button_disabled {
+  background-color: grey;
+  color: lightgrey;
 }
 .button_hidden{
   opacity:0;
@@ -895,7 +907,7 @@ label:hover:before {
     position: fixed;
       width: 100%;
       overflow: hidden;
-      height: 5px;
+      height: 10px;
 display: none;
 
 background-color: #f7f7f7;
@@ -920,7 +932,7 @@ border-radius: 0px;
 
 .progress__bar {
 width: 0;
-height: 5px;
+height: 10px;
 
 
 background-color: #00f;
@@ -998,6 +1010,9 @@ transition: width 0.6s ease;
   }
   .logo{margin:10px 10px 0 10px;}
   .contacts__list,.social__list{margin:10px 10px 20px 5px;}
+  .button{
+    min-width: 300px;
+  }
 }
 @media only screen and (max-width:500px){
   .h1{
