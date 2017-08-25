@@ -554,8 +554,7 @@ body {
   z-index: -2;
 
   display: block;
-  // background-image: url('3018_hd-nowm.jpg');
-  background-image: url('giphy.gif');
+  background-image: url('3018_hd-nowm.jpg');
 
   width: 100%;
   height: 100%;
@@ -569,11 +568,16 @@ body {
 }
 
 .hello-screen::before{
+  background-image: url('ezgif.com-crop.gif');
+
   -webkit-filter: none;
   -moz-filter: none;
   -o-filter: none;
   -ms-filter: none;
   filter: none;
+}
+.test-results::before{
+background-image: url('giphy.gif');
 }
 
 // .content {
