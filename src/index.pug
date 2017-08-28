@@ -6,11 +6,14 @@ html(lang="ru")
     meta(name="description" content="")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     title Школа перспективных исследований
+    script function canUseWebP(){var e=document.createElement("canvas");return 0==e.toDataURL("image/webp").indexOf("data:image/webp")}var webpSupport=canUseWebP(),dummyImg=document.createElement("img");webpSupport?window.outerWidth>800?(dummyImg.src="assets/blackboard.webp",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.webp"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):(dummyImg.src="assets/blackboard.jpg",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.jpg"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):window.outerWidth>800?(dummyImg.src="assets/blackboard.gif",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.gif"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):(dummyImg.src="assets/blackboard.jpg",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.jpg"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"});
   body
     div(class="progress" id="progress")
       div(class="progress__bar" id="progress__bar")
+    div(class="load" id="load")
+      div(class="load__circle")
     main(id="fullpage")
-      section(class="hello-screen section" id="hello-screen" data-anchor="start")
+      section(class="hello-screen mustLoad section" id="hello-screen" data-anchor="start")
         header(class="header")
           div(class="logo")
             img(class="logo__img" src="/assets/SAS__logo_small_blue.png")
@@ -18,15 +21,19 @@ html(lang="ru")
             div(class="social")
               ul(class="social__list")
                 li(class="social__list-item icon-vkontakte-1")
-                li(class="social__list-item icon-facebook-1")
+                  a(class="social__a" href="https://vk.com/sas_tmn" target="_blank")
+                li(class="social__list-item  icon-facebook-1")
+                  a(class="social__a" href="https://www.facebook.com/sasutmn/" target="_blank")
                 li(class="social__list-item icon-instagram")
+                  a(class="social__a"  href="https://www.instagram.com/sas_tmn/" target="_blank")
             div(class="contacts")
               ul(class="contacts__list")
-                li(class="contacts__list-item") sas@utmn.ru
-                li(class="contacts__list-item") +7 911 11 11 1
-        h1(class="h1 h1_hello") Школа перспективных исследований представляет:<br/>“Стань лучше: тест”(пример)<br/>(стрелка вниз)
-          
-
+                li(class="contacts__list-item") 
+                  a(href="mailto:sas@utmn.ru") sas@utmn.ru
+                li(class="contacts__list-item") +7 922 268 03 63
+        h1(class="h1 h1_hello") Школа перспективных исследований представляет:<br/>“Стань лучше: тест”(пример)<br/>
+          a(href="#presentation")
+            span(class="arrow-down")
         //- h1(class="h1") Школа перспективных исследований запускает программу открытых лекций.<br/>Пройди наш тест и получи рекомендацию экспертов о том, какой киношедевр тебе подходит
         //- button(class="button" id="start-button") Начать тест
       section(class="presentation-screen section" id="presentation-screen" data-anchor="presentation")
@@ -37,12 +44,15 @@ html(lang="ru")
             div(class="social")
               ul(class="social__list")
                 li(class="social__list-item icon-vkontakte-1")
+                  a(class="social__a" href="https://vk.com/sas_tmn" target="_blank")
                 li(class="social__list-item icon-facebook-1")
+                  a(class="social__a" href="https://www.facebook.com/sasutmn/" target="_blank")
                 li(class="social__list-item icon-instagram")
+                  a(class="social__a" href="https://www.instagram.com/sas_tmn/" target="_blank")
             div(class="contacts")
               ul(class="contacts__list")
                 li(class="contacts__list-item") sas@utmn.ru
-                li(class="contacts__list-item") +7 911 11 11 11
+                li(class="contacts__list-item") +7 922 268 03 63
         h1(class="h1") Школа перспективных исследований – это пространство “свободного образования”, место, где абитуриент становится частью мировой интеллектуальной элиты. Пройди наш мини-тест и узнай, какой фильм мы рекомендуем тебе посмотреть, чтобы стать еще лучше и быть частью нашей команды.
         button(class="button button_hidden" id="start-button") Начать тест
       section(class="test-screen section" id="test-screen-1" data-anchor="test1")
