@@ -168,9 +168,9 @@ var image = 'assets/003-north-by-northwest-theredlist.jpg';
   document.getElementById('results-header').innerHTML = title;
   document.getElementById('results-descr').innerHTML = description
   document.getElementById('results-img').src = image;
-  // yandexShare.dataset.title = template + title;
-  // yandexShare.dataset.description = template + description;
-  // yandexShare.dataset.image = image ;
+  document.querySelector("meta[property='og\\:title']").content = template + title;
+  document.querySelector("meta[property='og\\:description']").content = description;
+  document.querySelector("meta[property='og\\:image']").content = image;
 }
 
 var agreement = document.getElementById('agreement-checkbox');
