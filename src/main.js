@@ -38,7 +38,7 @@ window.setTimeout(()=>{
     url: document.URL,
     title: template + title,
     description: description,
-    image: 'https//:lectures-sasonline.rhcloud.com/'+ image,
+    image: 'https://lectures-sasonline.rhcloud.com/'+ image,
     noparse: true,
   },{type: 'round', text: 'Поделиться',})
 },7000);

@@ -1261,3 +1261,9 @@ transition: width 0.6s ease;
   }
 
 }
+@media only screen and (max-height:500px){
+  .hello-screen,.presentation-screen{
+    height: auto;
+  }
+
+}

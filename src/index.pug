@@ -7,7 +7,7 @@ html(lang="ru")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(property="og:title" content="SAS")
     meta(property="og:description" content="Я прошел тест Школы перпективных исследований.")
-    meta(property="og:image" content="")
+    meta(property="og:image" content="https://lectures-sasonline.rhcloud.com/assets/SAS__logo_small_blue.png")
     meta(property="fb:app_id" content="307669659708408")
     title Школа перспективных исследований
     script function canUseWebP(){var e=document.createElement("canvas");return 0==e.toDataURL("image/webp").indexOf("data:image/webp")}var webpSupport=canUseWebP(),dummyImg=document.createElement("img");webpSupport?window.outerWidth>800?(dummyImg.src="assets/blackboard.webp",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.webp"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):(dummyImg.src="assets/blackboard.jpg",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.jpg"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):window.outerWidth>800?(dummyImg.src="assets/blackboard.gif",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.gif"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):(dummyImg.src="assets/blackboard.jpg",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.jpg"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"});
@@ -177,9 +177,8 @@ html(lang="ru")
                 ul(class="social__list social__list_margin10")
                   li(class="social__list-item " id="vk-share")
                   li(class="social__list-item" id="facebook-share")
+                    div(class="fb-share-button"  data-href="http://lectures-sasonline.rhcloud.com/#test-results" data-layout="button")
           div(class="vk-subcribe")
-          div(class="fb-share-button"  data-href="http://lectures-sasonline.rhcloud.com/#test-results" data-layout="button")
-          div(id="fb-root")
             h3(class="h3 h3_align-left h3_margin1020") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
             div(id="vk_groups")
           img(class="list-item__img list-item__img_results" id="results-img" src="assets/003-north-by-northwest-theredlist.jpg")
@@ -192,7 +191,7 @@ html(lang="ru")
             input(id="agreement-checkbox" type="checkbox")
             label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
     script(type="text/javascript" src="//vk.com/js/api/openapi.js?146")
-    script if (window.innerWidth>1000) {VK.Widgets.Group("vk_groups", {mode: 3,width:400, color1:'#7e0000'}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}else {VK.Widgets.Group("vk_groups", {mode: 3,width:300, color1:'#7e0000'}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}
+    script if (window.innerWidth>1000) {VK.Widgets.Group("vk_groups", {mode: 3,width:400}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}else {VK.Widgets.Group("vk_groups", {mode: 3,width:280}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}
 
             
 
