@@ -14,16 +14,6 @@ var isLarge = true;
 if(window.innerWidth<=1000){isLarge = false};
 
 window.onload = ()=>{
-  window.setTimeout(()=>{document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
-
-  document.getElementById('')
-},2000);
-window.setTimeout(()=>{
-  var results = document.getElementById('test-results');
-  if (isLarge){results.style.backgroundImage = "url('assets/giphy.gif')";
-  results.style.backgroundSize = "cover";}
-  // results.style.display = "flex";
-},7000);
 
 // document.getElementById('fullpage').fullpage({
 //   anchors: [
@@ -32,6 +22,14 @@ window.setTimeout(()=>{
 //   responsiveWidth: 1000
 // });
 if (isLarge){
+  window.setTimeout(()=>{document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
+},2000);
+window.setTimeout(()=>{
+  var results = document.getElementById('test-results');
+  if (isLarge){results.style.backgroundImage = "url('assets/giphy.gif')";
+  results.style.backgroundSize = "cover";}
+  // results.style.display = "flex";
+},7000);
   initialize('#fullpage', {
     anchors: [
       'start', 'presentation','test1','test2','test3'
@@ -39,8 +37,8 @@ if (isLarge){
   });
 }
 else {
-  document.querySelector('#test2 .h2').style.display = 'none';
-  document.querySelector('#test3 .h2').style.display = 'none';
+  document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
+
 }
 }
 
@@ -92,15 +90,15 @@ function progressBarHandler(){
   // act.offsetHeight; // no need to store this anywhere, the reference is enough
   // act.style.opacity='1';
 
-var buttonStart = document.getElementById('start-button');
-showButton(buttonStart);
+var startButton = document.getElementById('start-button');
+showButton(startButton);
 if ("onhashchange" in window) {
   window.onhashchange = () => {
-    showButton(buttonStart);
+    showButton(startButton);
     progressBarHandler();
   }
 } else {
-  window.onload = ()=>{showButton(buttonStart);
+  window.onload = ()=>{showButton(startButton);
   progressBarHandler();
   document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
 }
@@ -141,7 +139,6 @@ endButton.addEventListener('click',()=>{
      calculateResults();
      document.getElementById('test-results').style.display = 'block';
      window.location.href = '#test-results';
-     if (isLarge) {fullpage.moveSectionDown();}
      document.getElementById('test-results').style.visibility = 'visible';
     //  fullpage.destroy('all');
     //  document.getElementById('test-screen-3').classList.remove('activeSection')

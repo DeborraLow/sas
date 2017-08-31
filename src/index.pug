@@ -5,7 +5,9 @@ html(lang="ru")
     meta(http-equiv="x-ua-compatible" content="ie=edge")
     meta(name="description" content="")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    
+    meta(property="og:title" content="Мэрилин Монро")
+    meta(property="og:description" content="Американская киноактриса и певица")
+    meta(property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Marilyn_Monroe_-_publicity.JPG/210px-Marilyn_Monroe_-_publicity.JPG")
     title Школа перспективных исследований
     script function canUseWebP(){var e=document.createElement("canvas");return 0==e.toDataURL("image/webp").indexOf("data:image/webp")}var webpSupport=canUseWebP(),dummyImg=document.createElement("img");webpSupport?window.outerWidth>800?(dummyImg.src="assets/blackboard.webp",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.webp"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):(dummyImg.src="assets/blackboard.jpg",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.jpg"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):window.outerWidth>800?(dummyImg.src="assets/blackboard.gif",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.gif"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):(dummyImg.src="assets/blackboard.jpg",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.jpg"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"});
   body
@@ -179,7 +181,7 @@ html(lang="ru")
               //-       li(class="social__list-item icon-facebook-1")
           div(class="vk-subcribe")
             h3(class="h3 h3_align-left h3_margin1020") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
-            img(style="margin:10px 20px; width:300px;height:200px;" src="assets/gruppa_Vkontakte-6.gif")
+            div(id="vk_groups")
           img(class="list-item__img list-item__img_results" id="results-img" src="assets/003-north-by-northwest-theredlist.jpg")
         div(class="email-subscribe")
           h3(class="h3 h3_align-left") Подпишись на рассылку Школы:
@@ -189,8 +191,10 @@ html(lang="ru")
             input(class="form-subscribe__submit button button_small" id="form-subscribe__submit" type="submit" disabled="true" value="Подписаться")
             input(id="agreement-checkbox" type="checkbox")
             label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
+    script(type="text/javascript" src="//vk.com/js/api/openapi.js?146")
+    script VK.Widgets.Group("vk_groups", {mode: 3,width:300, color1:'#7e0000'}, 146251082); document.getElementById('vk_groups').style.margin = '20px';
 
-
+            
 
 
     //- div(class="background")
