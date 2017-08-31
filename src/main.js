@@ -138,6 +138,7 @@ for (var i = 0; i < listItems.length; i++) {
 endButton.addEventListener('click',()=>{
    if(!endButton.classList.contains('button_disabled')){
      sendResult(checkedItems);
+     calculateResults();
      document.getElementById('test-results').style.display = 'block';
      window.location.href = '#test-results';
      if (isLarge) {fullpage.moveSectionDown();}
@@ -152,13 +153,15 @@ endButton.addEventListener('click',()=>{
 function calculateResults(){
   var title = '"К северу через северо-запад", Альфред Хичкок';
   var description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
+var image = 'assets/003-north-by-northwest-theredlist.jpg';
   var template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
   var yandexShare = document.getElementsByClassName('ya-share2')[0];
   document.getElementById('results-header').innerHTML = title;
   document.getElementById('results-descr').innerHTML = description
-  document.getElementById('results-img').src = 'assets/003-north-by-northwest-theredlist.jpg';
+  document.getElementById('results-img').src = image;
   yandexShare.dataset.title = template + title;
   yandexShare.dataset.description = template + description;
+  yandexShare.dataset.image = image ;
 }
 
 var agreement = document.getElementById('agreement-checkbox');
