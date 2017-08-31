@@ -34,18 +34,11 @@ window.setTimeout(()=>{
   if (isLarge){results.style.backgroundImage = "url('assets/giphy.gif')";
   results.style.backgroundSize = "cover";}
   // results.style.display = "flex";
-  FB.init({
-    appId            : '307669659708408',
-    autoLogAppEvents : true,
-    status           : true,
-    xfbml            : true,
-    version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
-  });
   vk(document,"vk-share",{
     url: document.URL,
     title: template + title,
     description: description,
-    image: image,
+    image: 'https//:lectures-sasonline.rhcloud.com/'+ image,
     noparse: true,
   },{type: 'round', text: 'Поделиться',})
 },7000);
@@ -57,13 +50,7 @@ window.setTimeout(()=>{
 }
 else {
   document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
-  FB.init({
-    appId            : '307669659708408',
-    autoLogAppEvents : true,
-    status           : true,
-    xfbml            : true,
-    version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
-  });
+
   vk(document,"vk-share",{
     url: document.URL,
     title: template + title,
@@ -175,23 +162,27 @@ endButton.addEventListener('click',()=>{
     //  fullpage.destroy('all');
     //  document.getElementById('test-screen-3').classList.remove('activeSection')
     //  document.getElementById('test-results').classList.add('activeSection');
-    FB.ui(
-    {
-      app_id:'307669659708408',
-      method: 'feed',
-      caption: template + title,
-      source: image,
-      href: 'http://lectures-sasonline.rhcloud.com',
-    },
-    // callback
-    function(response) {
-      if (response && !response.error_message) {
-        alert('Posting completed.');
-      } else {
-        alert('Error while posting.');
-      }
-    }
+    FB.api(
+       'https://graph.facebook.com/me/og.likes',
+       'post',
+       { object: objectToLike,
+         privacy: {'value': 'SELF'} },
+       function(response) {
+         if (!response) {
+           alert('Error occurred.');
+         } else if (response.error) {
+           document.getElementById('result').innerHTML =
+             'Error: ' + response.error.message;
+         } else {
+           document.getElementById('result').innerHTML =
+             '<a href=\"https://www.facebook.com/me/activity/' +
+             response.id + '\">' +
+             'Story created.  ID is ' +
+             response.id + '</a>';
+         }
+       }
     );
+
    }
    else {alert("Выбери не менее 3 вариантов")}
 })
@@ -261,10 +252,19 @@ function vk (d, id, pr1, pr2) {
   d.documentElement.appendChild(js);
 };
 
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '307669659708408',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
