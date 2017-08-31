@@ -16,6 +16,7 @@ var template = "Я прошел тест Школы перпективных и�
 var title = '"К северу через северо-запад", Альфред Хичкок';
 var description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
 var image = 'assets/003-north-by-northwest-theredlist.jpg';
+
 if(window.innerWidth<=1000){isLarge = false};
 
 window.onload = ()=>{
@@ -268,3 +269,29 @@ window.fbAsyncInit = function() {
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+   (function (d, w, c) {
+           (w[c] = w[c] || []).push(function() {
+               try {
+                   w.yaCounter45804912 = new Ya.Metrika({
+                       id:45804912,
+                       clickmap:true,
+                       trackLinks:true,
+                       accurateTrackBounce:true,
+                       webvisor:true,
+                       trackHash:true
+                   });
+               } catch(e) { }
+           });
+
+           var n = d.getElementsByTagName("script")[0],
+               s = d.createElement("script"),
+               f = function () { n.parentNode.insertBefore(s, n); };
+           s.type = "text/javascript";
+           s.async = true;
+           s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
+
+           if (w.opera == "[object Opera]") {
+               d.addEventListener("DOMContentLoaded", f, false);
+           } else { f(); }
+       })(document, window, "yandex_metrika_callbacks");

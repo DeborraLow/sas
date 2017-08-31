@@ -589,7 +589,7 @@ body {
   -moz-filter: brightness(65%);
   -o-filter: brightness(65%);
   -ms-filter: brightness(65%);
-  filter: brightness(65%);;
+  filter: brightness(65%);
 }
  .hello-screen::before, .presentation-screen::before {
   // background-image: url('blackboard.gif');
@@ -618,6 +618,7 @@ body {
     background-repeat: no-repeat;
 }
 .presentation-screen{
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -625,6 +626,9 @@ body {
   	opacity: 0;
 
 
+}
+.presentation-screen::before{
+background-image:url("blackboard_small.jpg"); background-size:cover;
 }
 
 .screen__filter{
