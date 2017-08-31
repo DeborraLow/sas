@@ -34,6 +34,13 @@ window.setTimeout(()=>{
   if (isLarge){results.style.backgroundImage = "url('assets/giphy.gif')";
   results.style.backgroundSize = "cover";}
   // results.style.display = "flex";
+  vk(document,"vk-share",{
+    url: document.URL,
+    title: template + title,
+    description: description,
+    image: image,
+    noparse: true,
+  },{type: 'round', text: 'Поделиться',})
 },7000);
   initialize('#fullpage', {
     anchors: [
@@ -182,6 +189,11 @@ agreement.addEventListener('click', ()=>{
     submitButton.disabled = true;
   }
 })
+submitButton.addEventListener('click',()=>{
+  if (!agreement.checked){
+    alert('Пожалуйста, дайте свое согласие на обработку персональных данных')
+  }
+})
 
 function sendResult(items) {
   console.log(items);
@@ -196,7 +208,7 @@ function documentHeight() {
   return Math.max(document.documentElement.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight);
 }
 
-!function (d, id, pr1, pr2) {
+function vk (d, id, pr1, pr2) {
   var js = d.createElement("script");
   js.src = "http://vk.com/js/api/share.js?90";
   js.onload = js.onreadystatechange = function () {
@@ -210,10 +222,12 @@ function documentHeight() {
     }
   }};
   d.documentElement.appendChild(js);
-}(document,"vk-share",{
-  url: document.URL,
-  title: template + title,
-  description: description,
-  image: image,
-  noparse: true,
-},{type: 'round', text: 'Поделиться',});
+};
+
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));

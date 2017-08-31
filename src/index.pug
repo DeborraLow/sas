@@ -174,9 +174,11 @@ html(lang="ru")
               h3(class="h3 h3_align-left h3_margin10") Поделиться:
               div(class="social")
                 ul(class="social__list social__list_margin10")
-                  li(class="social__list-item icon-vkontakte-1" id="vk-share")
-                    li(class="social__list-item icon-facebook-1")
+                  li(class="social__list-item " id="vk-share")
+                  li(class="social__list-item" id="facebook-share")
           div(class="vk-subcribe")
+          div(class="fb-share-button"  data-href="http://lectures-sasonline.rhcloud.com/#test-results" data-layout="button")
+          div(id="fb-root")
             h3(class="h3 h3_align-left h3_margin1020") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
             div(id="vk_groups")
           img(class="list-item__img list-item__img_results" id="results-img" src="assets/003-north-by-northwest-theredlist.jpg")
@@ -184,12 +186,12 @@ html(lang="ru")
           h3(class="h3 h3_align-left") Подпишись на рассылку Школы:
           form(class="form-subscribe" action="/subscribe" method="post")
             label(class="form-subscribe__label") E-mail:
-              input(class="form-subscribe__input" type="email" name="email" required)
+              input(class="form-subscribe__input" type="email" name="email" required="true")
             input(class="form-subscribe__submit button button_small" id="form-subscribe__submit" type="submit" disabled="true" value="Подписаться")
             input(id="agreement-checkbox" type="checkbox")
             label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
     script(type="text/javascript" src="//vk.com/js/api/openapi.js?146")
-    script VK.Widgets.Group("vk_groups", {mode: 3,width:300, color1:'#7e0000'}, 146251082); document.getElementById('vk_groups').style.margin = '20px';
+    script if (window.innerWidth>1000) {VK.Widgets.Group("vk_groups", {mode: 3,width:400, color1:'#7e0000'}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}else {VK.Widgets.Group("vk_groups", {mode: 3,width:300, color1:'#7e0000'}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}
 
             
 
