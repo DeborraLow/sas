@@ -155,6 +155,20 @@ endButton.addEventListener('click',()=>{
     //  fullpage.destroy('all');
     //  document.getElementById('test-screen-3').classList.remove('activeSection')
     //  document.getElementById('test-results').classList.add('activeSection');
+    FB.ui(
+    {
+      method: 'share',
+      href: 'http://lectures-sasonline.rhcloud.com/#test-results',
+    },
+    // callback
+    function(response) {
+      if (response && !response.error_message) {
+        alert('Posting completed.');
+      } else {
+        alert('Error while posting.');
+      }
+    }
+    );
    }
    else {alert("Выбери не менее 3 вариантов")}
 })
