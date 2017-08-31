@@ -5,6 +5,7 @@ html(lang="ru")
     meta(http-equiv="x-ua-compatible" content="ie=edge")
     meta(name="description" content="")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    
     title Школа перспективных исследований
     script function canUseWebP(){var e=document.createElement("canvas");return 0==e.toDataURL("image/webp").indexOf("data:image/webp")}var webpSupport=canUseWebP(),dummyImg=document.createElement("img");webpSupport?window.outerWidth>800?(dummyImg.src="assets/blackboard.webp",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.webp"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):(dummyImg.src="assets/blackboard.jpg",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.jpg"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):window.outerWidth>800?(dummyImg.src="assets/blackboard.gif",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.gif"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"}):(dummyImg.src="assets/blackboard.jpg",dummyImg.onload=function(){document.styleSheets[0].insertRule('.hello-screen::before,.presentation-screen::before{background:url("assets/blackboard.jpg"); background-size:cover}',document.styleSheets[0].cssRules.length),document.getElementById("load").style.visibility="hidden"});
   body
@@ -171,7 +172,7 @@ html(lang="ru")
               h3(class="h3 h3_align-left h3_margin10") Поделиться:
               script(src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js")
               script(src="//yastatic.net/share2/share.js")
-              div(class="ya-share2" data-services="vkontakte,facebook" data-title="asfsd" data-description="asfsd")
+              div(class="ya-share2" data-services="vkontakte,facebook,twitter,gplus")
               //- div(class="social")
               //-   ul(class="social__list social__list_margin10")
               //-     li(class="social__list-item icon-vkontakte-1")
