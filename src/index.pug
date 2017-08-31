@@ -36,7 +36,7 @@ html(lang="ru")
             span(class="arrow-down")
         //- h1(class="h1") Школа перспективных исследований запускает программу открытых лекций.<br/>Пройди наш тест и получи рекомендацию экспертов о том, какой киношедевр тебе подходит
         //- button(class="button" id="start-button") Начать тест
-      section(class="presentation-screen section" id="presentation-screen" data-anchor="presentation")
+      section(class="presentation-screen section" id="presentation" data-anchor="presentation")
         header(class="header")
           div(class="logo")
             img(class="logo__img" src="/assets/SAS__logo_small_blue.png")
@@ -55,7 +55,7 @@ html(lang="ru")
                 li(class="contacts__list-item") +7 922 268 03 63
         h1(class="h1") Школа перспективных исследований – это пространство “свободного образования”, место, где абитуриент становится частью мировой интеллектуальной элиты. Пройди наш мини-тест и узнай, какой фильм мы рекомендуем тебе посмотреть, чтобы стать еще лучше и быть частью нашей команды.
         button(class="button button_hidden" id="start-button") Начать тест
-      section(class="test-screen section" id="test-screen-1" data-anchor="test1")
+      section(class="test-screen section" id="test1" data-anchor="test1")
         h2(class="h2") Выбери темы лекций, которые тебе интересны:
         div(class="test-row")
           ul(class="list")
@@ -92,8 +92,8 @@ html(lang="ru")
                 img(class="list-item__img" src="assets/thereisnogod.png")
                 h4(class="list-item__header") История кино. Оксана Булгакова
               p(class="list-item__description") Вторая звуковая революция, голливудские студии, нуар, авторское кино и глобализация.
-      section(class="test-screen section" id="test-screen-2" data-anchor="test2")
-        h2(class="h2") Выбери лекции, которые тебе интересны:
+      section(class="test-screen section" id="test2" data-anchor="test2")
+        h2(class="h2") Выбери темы лекций, которые тебе интересны:
         div(class="test-row")
           ul(class="list")
             li(class="list-item" id="7")
@@ -126,8 +126,8 @@ html(lang="ru")
                 img(class="list-item__img" src="assets/thereisnogod.png")
                 h4(class="list-item__header") Право и любовь. Закари Рейна
               p(class="list-item__description") Каковы отношения между правом и любовью? Каково место любви в праве и место права в любви? Можем ли право быть похожим на любовь?
-      section(class="test-screen section" id="test-screen-3" data-anchor="test3")
-        h2(class="h2") Выбери лекции, которые тебе интересны:
+      section(class="test-screen section" id="test3" data-anchor="test3")
+        //- h2(class="h2") Выбери темы лекций, которые тебе интересны:
         div(class="test-row")
           ul(class="list")
             li(class="list-item" id="13")
@@ -163,30 +163,31 @@ html(lang="ru")
         button(class="button button_disabled" id="end-button" ) Узнать результат
       section(class="test-results section" id="test-results" data-anchor="test-results")
         h2(class="h2") Поздравляем! Твой результат:
-        div(class="results")  
-          div(class="result__wrapper")
-            div(class="list-item__header-wrapper list-item__header-wrapper_results")
-              h3(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
-              p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
+        div(class="test-results__flex-wrapper")
+          div(class="list-item__header-wrapper list-item__header-wrapper_results")
+            h3(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
+            p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
             div(class="share-results")
               h3(class="h3 h3_align-left h3_margin10") Поделиться:
-              div(class="social")
-                ul(class="social__list social__list_margin10")
-                  li(class="social__list-item icon-vkontakte-1")
-                    li(class="social__list-item icon-facebook-1")
-            div(class="subscribe")
-              div(class="vk-subcribe")
-                h3(class="h3 h3_align-left h3_margin10") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
-                img(style="margin:10px 20px; width:300px;height:200px;" src="assets/gruppa_Vkontakte-6.gif")
+              script(src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js")
+              script(src="//yastatic.net/share2/share.js")
+              div(class="ya-share2" data-services="vkontakte,facebook" data-description="Я прошел тест Школы перпективных исследований. Мне рекомендован фильм:")
+              //- div(class="social")
+              //-   ul(class="social__list social__list_margin10")
+              //-     li(class="social__list-item icon-vkontakte-1")
+              //-       li(class="social__list-item icon-facebook-1")
+          div(class="vk-subcribe")
+            h3(class="h3 h3_align-left h3_margin1020") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
+            img(style="margin:10px 20px; width:300px;height:200px;" src="assets/gruppa_Vkontakte-6.gif")
           img(class="list-item__img list-item__img_results" src="assets/003-north-by-northwest-theredlist.jpg")
         div(class="email-subscribe")
           h3(class="h3 h3_align-left") Подпишись на рассылку Школы:
           form(class="form-subscribe" action="/subscribe" method="post")
-            label(class="form-subscribe__label") E-mail
-              input(class="form-subscribe__input" type="email" name="email" required="true")
+            label(class="form-subscribe__label") E-mail:
+              input(class="form-subscribe__input" type="email" name="email" required)
+            input(class="form-subscribe__submit button button_disabled button_small" id="form-subscribe__submit" type="submit" disabled="true" value="Подписаться")
             input(id="agreement-checkbox" type="checkbox")
             label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
-            input(class="form-subscribe__submit button button_small" type="submit" value="Подписаться")
 
 
 
