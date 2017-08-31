@@ -165,13 +165,13 @@ html(lang="ru")
         h2(class="h2") Поздравляем! Твой результат:
         div(class="test-results__flex-wrapper")
           div(class="list-item__header-wrapper list-item__header-wrapper_results")
-            h3(class="list-item__header") "К северу через северо-запад", Альфред Хичкок
-            p(class="list-item__description") Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»
+            h3(class="list-item__header" id="results-header") "К северу через северо-запад", Альфред Хичкок
+            p(class="list-item__description" id="results-descr") Приключенческо-шпионский триллер 1959 года
             div(class="share-results")
               h3(class="h3 h3_align-left h3_margin10") Поделиться:
               script(src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js")
               script(src="//yastatic.net/share2/share.js")
-              div(class="ya-share2" data-services="vkontakte,facebook" data-description="Я прошел тест Школы перпективных исследований. Мне рекомендован фильм:")
+              div(class="ya-share2" data-services="vkontakte,facebook" data-description="")
               //- div(class="social")
               //-   ul(class="social__list social__list_margin10")
               //-     li(class="social__list-item icon-vkontakte-1")
@@ -179,13 +179,13 @@ html(lang="ru")
           div(class="vk-subcribe")
             h3(class="h3 h3_align-left h3_margin1020") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
             img(style="margin:10px 20px; width:300px;height:200px;" src="assets/gruppa_Vkontakte-6.gif")
-          img(class="list-item__img list-item__img_results" src="assets/003-north-by-northwest-theredlist.jpg")
+          img(class="list-item__img list-item__img_results" id="results-img" src="assets/003-north-by-northwest-theredlist.jpg")
         div(class="email-subscribe")
           h3(class="h3 h3_align-left") Подпишись на рассылку Школы:
           form(class="form-subscribe" action="/subscribe" method="post")
             label(class="form-subscribe__label") E-mail:
               input(class="form-subscribe__input" type="email" name="email" required)
-            input(class="form-subscribe__submit button button_disabled button_small" id="form-subscribe__submit" type="submit" disabled="true" value="Подписаться")
+            input(class="form-subscribe__submit button button_small" id="form-subscribe__submit" type="submit" disabled="true" value="Подписаться")
             input(id="agreement-checkbox" type="checkbox")
             label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
 

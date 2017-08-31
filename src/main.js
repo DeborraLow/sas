@@ -149,16 +149,32 @@ endButton.addEventListener('click',()=>{
    else {alert("Выбери не менее 3 вариантов")}
 })
 
+function(calculateResults){
+  var title = '"К северу через северо-запад", Альфред Хичкок';
+  var description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
+  var template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
+  var yandexShare = document.getElementsByClassName('ya-share2')[0];
+  document.getElementById('results-header').innerHTML = title;
+  document.getElementById('results-descr').innerHTML = description
+  document.getElementById('results-img').src = 'assets/003-north-by-northwest-theredlist.jpg';
+  yandexShare.data.title = template + title;
+  yandexShare.data.description = template + description;
+}
+
 var agreement = document.getElementById('agreement-checkbox');
 var submitButton = document.getElementById('form-subscribe__submit');
 if (agreement.checked){
   submitButton.disabled = false;
-  submitButton.classList.remove('button_disabled');
-};
+}
+else{
+  submitButton.disabled = true;
+}
 agreement.addEventListener('click', ()=>{
   if (agreement.checked){
     submitButton.disabled = false;
-    submitButton.classList.remove('button_disabled');
+  }
+  else{
+    submitButton.disabled = true;
   }
 })
 
@@ -169,6 +185,7 @@ function sendResult(items) {
   xmlhttp.setRequestHeader("Content-Type", "application/json");
   xmlhttp.send(JSON.stringify(items));
 }
+
 
 function documentHeight() {
   return Math.max(document.documentElement.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight);
