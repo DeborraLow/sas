@@ -149,7 +149,7 @@ endButton.addEventListener('click',()=>{
    else {alert("Выбери не менее 3 вариантов")}
 })
 
-function(calculateResults){
+function calculateResults(){
   var title = '"К северу через северо-запад", Альфред Хичкок';
   var description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
   var template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
