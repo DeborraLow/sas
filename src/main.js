@@ -157,8 +157,8 @@ function calculateResults(){
   document.getElementById('results-header').innerHTML = title;
   document.getElementById('results-descr').innerHTML = description
   document.getElementById('results-img').src = 'assets/003-north-by-northwest-theredlist.jpg';
-  yandexShare.data.title = template + title;
-  yandexShare.data.description = template + description;
+  yandexShare.dataset.title = template + title;
+  yandexShare.dataset.description = template + description;
 }
 
 var agreement = document.getElementById('agreement-checkbox');
