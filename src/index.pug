@@ -172,13 +172,10 @@ html(lang="ru")
             p(class="list-item__description" id="results-descr") Приключенческо-шпионский триллер 1959 года
             div(class="share-results")
               h3(class="h3 h3_align-left h3_margin10") Поделиться:
-              script(src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js")
-              script(src="//yastatic.net/share2/share.js")
-              div(class="ya-share2" data-services="vkontakte,facebook,twitter,gplus")
-              //- div(class="social")
-              //-   ul(class="social__list social__list_margin10")
-              //-     li(class="social__list-item icon-vkontakte-1")
-              //-       li(class="social__list-item icon-facebook-1")
+              div(class="social")
+                ul(class="social__list social__list_margin10")
+                  li(class="social__list-item icon-vkontakte-1" id="vk-share")
+                    li(class="social__list-item icon-facebook-1")
           div(class="vk-subcribe")
             h3(class="h3 h3_align-left h3_margin1020") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
             div(id="vk_groups")

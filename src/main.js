@@ -11,6 +11,11 @@ var startButton = document.getElementById('start-button');
 var endButton = document.getElementById('end-button');
 var lastScrollTop = 0;
 var isLarge = true;
+//SHARE INFO
+var template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
+var title = '"К северу через северо-запад", Альфред Хичкок';
+var description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
+var image = 'assets/003-north-by-northwest-theredlist.jpg';
 if(window.innerWidth<=1000){isLarge = false};
 
 window.onload = ()=>{
@@ -156,9 +161,9 @@ var image = 'assets/003-north-by-northwest-theredlist.jpg';
   document.getElementById('results-header').innerHTML = title;
   document.getElementById('results-descr').innerHTML = description
   document.getElementById('results-img').src = image;
-  yandexShare.dataset.title = template + title;
-  yandexShare.dataset.description = template + description;
-  yandexShare.dataset.image = image ;
+  // yandexShare.dataset.title = template + title;
+  // yandexShare.dataset.description = template + description;
+  // yandexShare.dataset.image = image ;
 }
 
 var agreement = document.getElementById('agreement-checkbox');
@@ -190,3 +195,25 @@ function sendResult(items) {
 function documentHeight() {
   return Math.max(document.documentElement.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight);
 }
+
+!function (d, id, pr1, pr2) {
+  var js = d.createElement("script");
+  js.src = "http://vk.com/js/api/share.js?90";
+  js.onload = js.onreadystatechange = function () {
+  if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+    if (!this.executed) {
+      this.executed = true;
+      setTimeout(function () {
+        d.getElementById(id).innerHTML = VK.Share.button(pr1, pr2);
+        VK.Share._base_domain = 'https:' + VK.Share._base_domain;
+      }, 0);
+    }
+  }};
+  d.documentElement.appendChild(js);
+}(document,"vk-share",{
+  url: document.URL,
+  title: template + title,
+  description: description,
+  image: image,
+  noparse: true,
+},{type: 'round', text: 'Поделиться',});
