@@ -34,6 +34,13 @@ window.setTimeout(()=>{
   if (isLarge){results.style.backgroundImage = "url('assets/giphy.gif')";
   results.style.backgroundSize = "cover";}
   // results.style.display = "flex";
+  FB.init({
+    appId            : '307669659708408',
+    autoLogAppEvents : true,
+    status           : true,
+    xfbml            : true,
+    version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
+  });
   vk(document,"vk-share",{
     url: document.URL,
     title: template + title,
@@ -50,7 +57,20 @@ window.setTimeout(()=>{
 }
 else {
   document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
-
+  FB.init({
+    appId            : '307669659708408',
+    autoLogAppEvents : true,
+    status           : true,
+    xfbml            : true,
+    version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
+  });
+  vk(document,"vk-share",{
+    url: document.URL,
+    title: template + title,
+    description: description,
+    image: image,
+    noparse: true,
+  },{type: 'round', text: 'Поделиться',})
 }
 }
 
@@ -157,6 +177,7 @@ endButton.addEventListener('click',()=>{
     //  document.getElementById('test-results').classList.add('activeSection');
     FB.ui(
     {
+      app_id:'307669659708408',
       method: 'share',
       href: 'http://lectures-sasonline.rhcloud.com/#test-results',
     },
