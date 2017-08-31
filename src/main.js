@@ -179,6 +179,8 @@ endButton.addEventListener('click',()=>{
     {
       app_id:'307669659708408',
       method: 'feed',
+      caption: template + title,
+      source: image,
       href: 'http://lectures-sasonline.rhcloud.com',
     },
     // callback
