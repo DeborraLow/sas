@@ -178,8 +178,8 @@ endButton.addEventListener('click',()=>{
     FB.ui(
     {
       app_id:'307669659708408',
-      method: 'share',
-      href: 'http://lectures-sasonline.rhcloud.com/#test-results',
+      method: 'feed',
+      href: 'http://lectures-sasonline.rhcloud.com',
     },
     // callback
     function(response) {
