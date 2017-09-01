@@ -16,7 +16,12 @@ var template = "Я прошел тест Школы перпективных и�
 var title = '"К северу через северо-запад", Альфред Хичкок';
 var description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
 var image = 'assets/003-north-by-northwest-theredlist.jpg';
-
+var moviesDict = {
+  1:{title:'Меланхолия, Ларс фон Триер, 2011'},
+  2:{title:'Доктор Стрейнджлав, или Как я перестал бояться и полюбил бомбу, Стэнли Кубрик, 1964'},
+  3:{title:'Экзистенция, Дэвид Кроненберг, 1999'},
+  4:{title:''}
+}
 if(window.innerWidth<=1000){isLarge = false};
 
 window.onload = ()=>{
@@ -35,13 +40,7 @@ window.setTimeout(()=>{
   if (isLarge){results.style.backgroundImage = "url('assets/giphy.gif')";
   results.style.backgroundSize = "cover";}
   // results.style.display = "flex";
-  vk(document,"vk-share",{
-    url: document.URL,
-    title: template + title,
-    description: description,
-    image: 'https://lectures-sasonline.rhcloud.com/'+ image,
-    noparse: true,
-  },{type: 'round', text: 'Поделиться',})
+
 },7000);
   initialize('#fullpage', {
     anchors: [
@@ -52,13 +51,6 @@ window.setTimeout(()=>{
 else {
   document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
 
-  vk(document,"vk-share",{
-    url: document.URL,
-    title: template + title,
-    description: description,
-    image: image,
-    noparse: true,
-  },{type: 'round', text: 'Поделиться',})
 }
 }
 
@@ -189,17 +181,25 @@ endButton.addEventListener('click',()=>{
 })
 
 function calculateResults(){
-  var title = '"К северу через северо-запад", Альфред Хичкок';
-  var description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
-var image = 'assets/003-north-by-northwest-theredlist.jpg';
-  var template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
-  var yandexShare = document.getElementsByClassName('ya-share2')[0];
+  var movieIndex = checkedItems[Math.floor(Math.random() * (checkedItems.length - 1))];
+  console.log(movieIndex);
+  title = moviesDict[movieIndex].title;
+  description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
+  image = 'assets/003-north-by-northwest-theredlist.jpg';
+  template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
   document.getElementById('results-header').innerHTML = title;
   document.getElementById('results-descr').innerHTML = description
   document.getElementById('results-img').src = image;
   document.querySelector("meta[property='og\\:title']").content = template + title;
   document.querySelector("meta[property='og\\:description']").content = description;
   document.querySelector("meta[property='og\\:image']").content = image;
+  vk(document,"vk-share",{
+    url: document.URL,
+    title: template + title,
+    description: description,
+    image: 'https://lectures-sasonline.rhcloud.com/'+ image,
+    noparse: true,
+  },{type: 'round', text: 'Поделиться',})
 }
 
 var agreement = document.getElementById('agreement-checkbox');
