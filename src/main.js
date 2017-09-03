@@ -53,8 +53,7 @@ window.setTimeout(()=>{
   var results = document.getElementById('test-results');
   if (isLarge){results.style.backgroundImage = "url('assets/giphy.gif')";
   results.style.backgroundSize = "cover";}
-  // results.style.display = "flex";
-
+  socialInit();
 },7000);
   initialize('#fullpage', {
     anchors: [
@@ -191,7 +190,7 @@ endButton.addEventListener('click',()=>{
     );
 
    }
-   else {alert("Выбери не менее 3 вариантов")}
+   else {alert("Выбери не менее 3-х вариантов")}
 })
 
 function calculateResults(){
@@ -251,61 +250,63 @@ function documentHeight() {
   return Math.max(document.documentElement.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight);
 }
 
-function vk (d, id, pr1, pr2) {
-  var js = d.createElement("script");
-  js.src = "http://vk.com/js/api/share.js?90";
-  js.onload = js.onreadystatechange = function () {
-  if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-    if (!this.executed) {
-      this.executed = true;
-      setTimeout(function () {
-        d.getElementById(id).innerHTML = VK.Share.button(pr1, pr2);
-        VK.Share._base_domain = 'https:' + VK.Share._base_domain;
-      }, 0);
-    }
-  }};
-  d.documentElement.appendChild(js);
-};
-
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '307669659708408',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-    FB.AppEvents.logPageView();
+function socialInit(){
+  function vk (d, id, pr1, pr2) {
+    var js = d.createElement("script");
+    js.src = "http://vk.com/js/api/share.js?90";
+    js.onload = js.onreadystatechange = function () {
+    if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+      if (!this.executed) {
+        this.executed = true;
+        setTimeout(function () {
+          d.getElementById(id).innerHTML = VK.Share.button(pr1, pr2);
+          VK.Share._base_domain = 'https:' + VK.Share._base_domain;
+        }, 0);
+      }
+    }};
+    d.documentElement.appendChild(js);
   };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+  // window.fbAsyncInit = function() {
+  //     FB.init({
+  //       appId      : '307669659708408',
+  //       xfbml      : true,
+  //       version    : 'v2.10'
+  //     });
+  //     FB.AppEvents.logPageView();
+  //   };
+  //
+  //   (function(d, s, id){
+  //      var js, fjs = d.getElementsByTagName(s)[0];
+  //      if (d.getElementById(id)) {return;}
+  //      js = d.createElement(s); js.id = id;
+  //      js.src = "//connect.facebook.net/en_US/sdk.js";
+  //      fjs.parentNode.insertBefore(js, fjs);
+  //    }(document, 'script', 'facebook-jssdk'));
 
-   (function (d, w, c) {
-           (w[c] = w[c] || []).push(function() {
-               try {
-                   w.yaCounter45804912 = new Ya.Metrika({
-                       id:45804912,
-                       clickmap:true,
-                       trackLinks:true,
-                       accurateTrackBounce:true,
-                       webvisor:true,
-                       trackHash:true
-                   });
-               } catch(e) { }
-           });
+}
+(function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter45804912 = new Ya.Metrika({
+                    id:45804912,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    trackHash:true
+                });
+            } catch(e) { }
+        });
 
-           var n = d.getElementsByTagName("script")[0],
-               s = d.createElement("script"),
-               f = function () { n.parentNode.insertBefore(s, n); };
-           s.type = "text/javascript";
-           s.async = true;
-           s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
 
-           if (w.opera == "[object Opera]") {
-               d.addEventListener("DOMContentLoaded", f, false);
-           } else { f(); }
-       })(document, window, "yandex_metrika_callbacks");
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
