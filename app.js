@@ -1,4 +1,5 @@
 var express = require('express');
+var router = express.Router();
 var subdomain = require('express-subdomain');
 var path = require('path');
 var env = process.env;
