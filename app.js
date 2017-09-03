@@ -25,7 +25,6 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-
 var app = express();
 
 // view engine setup
