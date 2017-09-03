@@ -206,13 +206,7 @@ function calculateResults(){
   document.querySelector("meta[property='og\\:title']").content = template + title;
   document.querySelector("meta[property='og\\:description']").content = description;
   document.querySelector("meta[property='og\\:image']").content = image;
-  vk(document,"vk-share",{
-    url: document.URL,
-    title: template + title,
-    description: description,
-    image: 'https://lectures-sasonline.rhcloud.com/'+ image,
-    noparse: true,
-  },{type: 'round', text: 'Поделиться',})
+
 }
 
 var agreement = document.getElementById('agreement-checkbox');
@@ -251,6 +245,13 @@ function documentHeight() {
 }
 
 function socialInit(){
+  vk(document,"vk-share",{
+    url: document.URL,
+    title: template + title,
+    description: description,
+    image: 'https://lectures-sasonline.rhcloud.com/'+ image,
+    noparse: true,
+  },{type: 'round', text: 'Поделиться',});
   function vk (d, id, pr1, pr2) {
     var js = d.createElement("script");
     js.src = "http://vk.com/js/api/share.js?90";
