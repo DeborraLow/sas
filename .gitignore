@@ -1,1 +1,3 @@
 node_modules
+.public/assets/emails.txt
+.public/assets/results.txt
