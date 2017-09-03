@@ -1,4 +1,5 @@
 var express = require('express');
+var subdomain = require('express-subdomain');
 var path = require('path');
 var env = process.env;
 var favicon = require('serve-favicon');
@@ -47,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression());
 
 app.use('/', index);
+app.use(subdomain('advanced', router));
 //openshift health app test
 app.get('/health', function(req, res) {
   res.writeHead(200);

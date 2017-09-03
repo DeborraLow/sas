@@ -629,6 +629,11 @@ body {
 }
 .presentation-screen::before{
 background-image:url("blackboard_small.jpg"); background-size:cover;
+-webkit-filter: brightness(50%);
+-moz-filter: brightness(50%);
+-o-filter: brightness(50%);
+-ms-filter: brightness(50%);
+filter: brightness(50%);
 }
 
 .screen__filter{

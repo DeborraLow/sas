@@ -150,7 +150,7 @@ for (var i = 0; i < listItems.length; i++) {
     else {
       checkedItems.push(parseInt(this.id));
     }
-    if(checkedItems.length>=0){
+    if(checkedItems.length>=3){
       endButton.classList.remove('button_disabled');
     }
     else {
