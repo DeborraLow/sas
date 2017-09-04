@@ -13,9 +13,9 @@ var lastScrollTop = 0;
 var isLarge = true;
 //SHARE INFO
 var template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
-var title = '"К северу через северо-запад", Альфред Хичкок';
-var description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
-var image = 'assets/003-north-by-northwest-theredlist.jpg';
+var title = '';
+var description = '';
+var image = '';
 var moviesDict = {
   1:{title:'Меланхолия, Ларс фон Триер, 2011'},
   2:{title:'Доктор Стрейнджлав, или Как я перестал бояться и полюбил бомбу, Стэнли Кубрик, 1964'},
@@ -204,11 +204,16 @@ endButton.addEventListener('click',()=>{
 
 function calculateResults(){
   var movieIndex = checkedItems[Math.floor(Math.random() * (checkedItems.length - 1))];
-  console.log(movieIndex);
   title = moviesDict[movieIndex].title;
   description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
   image = 'assets/m' + movieIndex + '.jpg';
   template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
+  window.vk(document,"vk-share",{
+    url: document.URL,
+    title: template + title,
+    image: 'http://advanced.studies.school'+ image,
+    noparse: true,
+  },{type: 'round', text: 'Поделиться',});
   document.getElementById('results-header').innerHTML = title;
   // document.getElementById('results-descr').innerHTML = description
   document.getElementById('results-img').src = image;
@@ -266,14 +271,8 @@ function documentHeight() {
 }
 
 function socialInit(){
-  vk(document,"vk-share",{
-    url: document.URL,
-    title: template + title,
-    image: 'https://lectures-sasonline.rhcloud.com/'+ image,
-    noparse: true,
-  },{type: 'round', text: 'Поделиться',});
 
-  function vk (d, id, pr1, pr2) {
+  window.vk = function (d, id, pr1, pr2) {
     var js = d.createElement("script");
     js.src = "http://vk.com/js/api/share.js?90";
     js.onload = js.onreadystatechange = function () {
