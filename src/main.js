@@ -205,13 +205,14 @@ endButton.addEventListener('click',()=>{
 function calculateResults(){
   var movieIndex = checkedItems[Math.floor(Math.random() * (checkedItems.length - 1))];
   title = moviesDict[movieIndex].title;
-  description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
+  description = moviesDict[movieIndex].title;
   image = 'assets/m' + movieIndex + '.jpg';
   template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
   window.vk(document,"vk-share",{
     url: document.URL,
     title: template + title,
-    image: 'http://advanced.studies.school'+ image,
+    description: description,
+    image: 'http://advanced.studies.school/'+ image,
     noparse: true,
   },{type: 'round', text: 'Поделиться',});
   document.getElementById('results-header').innerHTML = title;
