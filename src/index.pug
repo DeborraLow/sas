@@ -62,7 +62,7 @@ html(lang="ru")
         h1(class="h1") Школа перспективных исследований – это пространство “свободного образования”, место, где абитуриент становится частью мировой интеллектуальной элиты. Пройди наш мини-тест и узнай, какой фильм мы рекомендуем тебе посмотреть, чтобы стать еще лучше и быть частью нашей команды.
         button(class="button button_hidden" id="start-button") Начать тест
       section(class="test-screen section" id="test1" data-anchor="test1")
-        h2(class="h2") Выбери темы лекций, которые тебе интересны:
+        h2(class="h2") Твоя задача - выбрать 3 темы, которые тебе интересны. Кстати, это настоящие лекции, которые читаются в Школе перспективных исследований:
         div(class="test-row")
           ul(class="list")
             li(class="list-item" id="1")
@@ -168,7 +168,7 @@ html(lang="ru")
               p(class="list-item__description") Изменения климата, генная инженерия, киборгизация, биоэтика и вымирание. Изучение этих и других проблем на материале японского аниме и манги.
         button(class="button button_disabled" id="end-button" ) Узнать результат
       section(class="test-results section" id="test-results" data-anchor="test-results")
-        h2(class="h2") Поздравляем! Твой результат:
+        h2(class="h2") Мы рекомендуем тебе посмотреть:
         div(class="test-results__flex-wrapper")
           div(class="test-results__flex-wrapper_column test-results__flex-wrapper_column_left")
             div(class="list-item__header-wrapper list-item__header-wrapper_results")
@@ -178,23 +178,23 @@ html(lang="ru")
                 div(class="social")
                   ul(class="social__list social__list_margin10")
                     li(class="social__list-item " id="vk-share")
-                      li(class="social__list-item" id="facebook-share")
+                    li(class="social__list-item" id="facebook-share")
                     //- div(class="fb-share-button"  data-href="http://lectures-sasonline.rhcloud.com/#test-results" data-layout="button")
+            img(class="list-item__img list-item__img_results" id="results-img" src="")
+          div(class="test-results__flex-wrapper_column test-results__flex-wrapper_column_right")
             div(class="vk-subcribe")
               h3(class="h3 h3_align-left h3_margin10") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
               div(id="vk_groups")
-          div(class="test-results__flex-wrapper_column test-results__flex-wrapper_column_right")
-            img(class="list-item__img list-item__img_results" id="results-img" src="")
             div(class="email-subscribe")
-              h3(class="h3 h3_align-left") Подпишись на рассылку Школы:
-              form(class="form-subscribe" action="/subscribe" method="post")
+              h3(class="h3 h3_align-left h3_email") Подпишись на рассылку Школы:
+              form(class="form-subscribe" id="form-subscribe" action="/subscribe" method="post")
                 label(class="form-subscribe__label") E-mail:
                   input(class="form-subscribe__input" type="email" name="email" required="true")
                 input(class="form-subscribe__submit button button_small" id="form-subscribe__submit" type="submit" disabled="true" value="Подписаться")
                 input(id="agreement-checkbox" type="checkbox")
                 label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
     script(type="text/javascript" src="//vk.com/js/api/openapi.js?146")
-    script if (window.innerWidth>1000) {VK.Widgets.Group("vk_groups", {mode: 3,width:400,height:200}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}else {VK.Widgets.Group("vk_groups", {mode: 3,width:280}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}document.getElementById('vk_groups').style.margin = '20px 10px';
+    script if (window.innerWidth>1000) {VK.Widgets.Group("vk_groups", {mode: 3,width:400,height:200,no_cover:1}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}else {VK.Widgets.Group("vk_groups", {mode: 3,width:280,no_cover:1}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}document.getElementById('vk_groups').style.margin = '20px 10px';
 
 
 

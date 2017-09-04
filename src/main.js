@@ -248,6 +248,18 @@ function sendResult(items) {
   xmlhttp.send(JSON.stringify(items));
 }
 
+document.getElementById('form-subscribe').onsubmit = function(e){
+  e.preventDefault();
+  console.log(e);
+  var xhr = new XMLHttpRequest();
+xhr.open("POST", "/subscribe");
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.send(JSON.stringify({
+    email: e.target.elements.email.value
+}));
+alert('Благодарим за подписку и до встречи на открытых лекциях!');
+};
+
 
 function documentHeight() {
   return Math.max(document.documentElement.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight);
@@ -261,7 +273,7 @@ function socialInit(){
     image: 'https://lectures-sasonline.rhcloud.com/'+ image,
     noparse: true,
   },{type: 'round', text: 'Поделиться',});
-  document.getElementById('vk_groups').style.margin = '10px'
+
   function vk (d, id, pr1, pr2) {
     var js = d.createElement("script");
     js.src = "http://vk.com/js/api/share.js?90";
