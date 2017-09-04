@@ -6,7 +6,7 @@ html(lang="ru")
     meta(name="description" content="")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(property="og:title" content="SAS")
-    meta(property="og:description" content="Я прошел тест Школы перпективных исследований.")
+    meta(property="og:description" content="Я прошел тест Школы перспективных исследований.")
     meta(property="og:image" content="https://lectures-sasonline.rhcloud.com/assets/SAS__logo_small_blue.png")
     meta(property="fb:app_id" content="307669659708408")
     title Школа перспективных исследований
@@ -38,8 +38,8 @@ html(lang="ru")
                   a(href="mailto:sas@utmn.ru") sas@utmn.ru
                 li(class="contacts__list-item") +7 922 268 03 63
         h1(class="h1 h1_hello") Школа перспективных исследований представляет:<br/>“Стань лучше: тест”(пример)<br/>
-          a(href="#presentation")
-            span(class="arrow-down")
+        a(href="#presentation")
+          span(class="arrow-down")
         //- h1(class="h1") Школа перспективных исследований запускает программу открытых лекций.<br/>Пройди наш тест и получи рекомендацию экспертов о том, какой киношедевр тебе подходит
         //- button(class="button" id="start-button") Начать тест
       section(class="presentation-screen section" id="presentation" data-anchor="presentation")
@@ -99,7 +99,7 @@ html(lang="ru")
                 h4(class="list-item__header") История кино. Оксана Булгакова
               p(class="list-item__description") Вторая звуковая революция, голливудские студии, нуар, авторское кино и глобализация.
       section(class="test-screen section" id="test2" data-anchor="test2")
-        h2(class="h2") Выбери темы лекций, которые тебе интересны:
+        //- h2(class="h2") Выбери темы лекций, которые тебе интересны:
         div(class="test-row")
           ul(class="list")
             li(class="list-item" id="7")
@@ -170,32 +170,33 @@ html(lang="ru")
       section(class="test-results section" id="test-results" data-anchor="test-results")
         h2(class="h2") Поздравляем! Твой результат:
         div(class="test-results__flex-wrapper")
-          div(class="list-item__header-wrapper list-item__header-wrapper_results")
-            h3(class="list-item__header" id="results-header") "К северу через северо-запад", Альфред Хичкок
-            p(class="list-item__description" id="results-descr") Приключенческо-шпионский триллер 1959 года
-            div(class="share-results")
-              h3(class="h3 h3_align-left h3_margin10") Поделиться:
-              div(class="social")
-                ul(class="social__list social__list_margin10")
-                  li(class="social__list-item " id="vk-share")
-                  li(class="social__list-item" id="facebook-share")
-                    div(class="fb-share-button"  data-href="http://lectures-sasonline.rhcloud.com/#test-results" data-layout="button")
-          div(class="vk-subcribe")
-            h3(class="h3 h3_align-left h3_margin1020") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
-            div(id="vk_groups")
-          img(class="list-item__img list-item__img_results" id="results-img" src="assets/003-north-by-northwest-theredlist.jpg")
-        div(class="email-subscribe")
-          h3(class="h3 h3_align-left") Подпишись на рассылку Школы:
-          form(class="form-subscribe" action="/subscribe" method="post")
-            label(class="form-subscribe__label") E-mail:
-              input(class="form-subscribe__input" type="email" name="email" required="true")
-            input(class="form-subscribe__submit button button_small" id="form-subscribe__submit" type="submit" disabled="true" value="Подписаться")
-            input(id="agreement-checkbox" type="checkbox")
-            label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
+          div(class="test-results__flex-wrapper_column test-results__flex-wrapper_column_left")
+            div(class="list-item__header-wrapper list-item__header-wrapper_results")
+              h3(class="list-item__header list-item__header_results" id="results-header") "К северу через северо-запад", Альфред Хичкок
+              p(class="list-item__description" id="results-descr") Приключенческо-шпионский триллер 1959 года
+              div(class="share-results")
+                div(class="social")
+                  ul(class="social__list social__list_margin10")
+                    li(class="social__list-item " id="vk-share")
+                      li(class="social__list-item" id="facebook-share")
+                    //- div(class="fb-share-button"  data-href="http://lectures-sasonline.rhcloud.com/#test-results" data-layout="button")
+            div(class="vk-subcribe")
+              h3(class="h3 h3_align-left h3_margin1020") Вступай в нашу группу в ВК и узнавай первым о предстоящих лекциях:
+              div(id="vk_groups")
+          div(class="test-results__flex-wrapper_column test-results__flex-wrapper_column_right")
+            img(class="list-item__img list-item__img_results" id="results-img" src="")
+            div(class="email-subscribe")
+              h3(class="h3 h3_align-left") Подпишись на рассылку Школы:
+              form(class="form-subscribe" action="/subscribe" method="post")
+                label(class="form-subscribe__label") E-mail:
+                  input(class="form-subscribe__input" type="email" name="email" required="true")
+                input(class="form-subscribe__submit button button_small" id="form-subscribe__submit" type="submit" disabled="true" value="Подписаться")
+                input(id="agreement-checkbox" type="checkbox")
+                label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
     script(type="text/javascript" src="//vk.com/js/api/openapi.js?146")
-    script if (window.innerWidth>1000) {VK.Widgets.Group("vk_groups", {mode: 3,width:400}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}else {VK.Widgets.Group("vk_groups", {mode: 3,width:280}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}
+    script if (window.innerWidth>1000) {VK.Widgets.Group("vk_groups", {mode: 3,width:400,height:200}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}else {VK.Widgets.Group("vk_groups", {mode: 3,width:280}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}
 
-            
+
 
 
     //- div(class="background")

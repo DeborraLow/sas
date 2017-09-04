@@ -48,6 +48,7 @@ window.onload = ()=>{
 // });
 if (isLarge){
   window.setTimeout(()=>{document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
+  document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
 },2000);
 window.setTimeout(()=>{
   var results = document.getElementById('test-results');
@@ -63,6 +64,7 @@ window.setTimeout(()=>{
 }
 else {
   document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
+  document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
 
 }
 }
@@ -145,9 +147,16 @@ for (var i = 0; i < listItems.length; i++) {
     var index = checkedItems.indexOf(parseInt(this.id));
     if (index !== -1) {
     checkedItems.splice(index, 1);
+    this.classList.toggle('list-item_selected');
     }
     else {
-      checkedItems.push(parseInt(this.id));
+      if(checkedItems.length==3){
+        alert('Выбери не более 3-х вариантов')
+      }
+      else{
+        checkedItems.push(parseInt(this.id));
+        this.classList.toggle('list-item_selected');
+      }
     }
     if(checkedItems.length>=3){
       endButton.classList.remove('button_disabled');
@@ -155,7 +164,7 @@ for (var i = 0; i < listItems.length; i++) {
     else {
       endButton.classList.add('button_disabled');
     }
-      this.classList.toggle('list-item_selected');
+      console.log(checkedItems);
   }
 }
 endButton.addEventListener('click',()=>{
@@ -168,26 +177,26 @@ endButton.addEventListener('click',()=>{
     //  fullpage.destroy('all');
     //  document.getElementById('test-screen-3').classList.remove('activeSection')
     //  document.getElementById('test-results').classList.add('activeSection');
-    FB.api(
-       'https://graph.facebook.com/me/og.likes',
-       'post',
-       { object: objectToLike,
-         privacy: {'value': 'SELF'} },
-       function(response) {
-         if (!response) {
-           alert('Error occurred.');
-         } else if (response.error) {
-           document.getElementById('result').innerHTML =
-             'Error: ' + response.error.message;
-         } else {
-           document.getElementById('result').innerHTML =
-             '<a href=\"https://www.facebook.com/me/activity/' +
-             response.id + '\">' +
-             'Story created.  ID is ' +
-             response.id + '</a>';
-         }
-       }
-    );
+    // FB.api(
+    //    'https://graph.facebook.com/me/og.likes',
+    //    'post',
+    //    { object: objectToLike,
+    //      privacy: {'value': 'SELF'} },
+    //    function(response) {
+    //      if (!response) {
+    //        alert('Error occurred.');
+    //      } else if (response.error) {
+    //        document.getElementById('result').innerHTML =
+    //          'Error: ' + response.error.message;
+    //      } else {
+    //        document.getElementById('result').innerHTML =
+    //          '<a href=\"https://www.facebook.com/me/activity/' +
+    //          response.id + '\">' +
+    //          'Story created.  ID is ' +
+    //          response.id + '</a>';
+    //      }
+    //    }
+    // );
 
    }
    else {alert("Выбери не менее 3-х вариантов")}
@@ -198,7 +207,7 @@ function calculateResults(){
   console.log(movieIndex);
   title = moviesDict[movieIndex].title;
   description = 'Приключенческо-шпионский триллер 1959 года, по стилистике предвосхищающий фильмы «бондианы»';
-  image = 'assets/003-north-by-northwest-theredlist.jpg';
+  image = 'assets/m' + movieIndex + '.jpg';
   template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
   document.getElementById('results-header').innerHTML = title;
   document.getElementById('results-descr').innerHTML = description
