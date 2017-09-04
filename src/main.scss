@@ -674,10 +674,10 @@ filter: brightness(50%);
 
 }
 .test-results__flex-wrapper_column_right{
-  max-width: 45vw;
+  max-width: 50vw;
 }
 .test-results__flex-wrapper_column_left{
-  max-width: 55vw;
+  max-width: 50vw;
 }
 .share {
   flex-grow: 1;
@@ -752,6 +752,9 @@ margin-top:20px ;
 .h2 {
   font-size: 30px;
   flex-grow: 1;
+}
+.h2_results{
+  text-align: left;
 }
 .h3 {
   font-size: 18px ;
