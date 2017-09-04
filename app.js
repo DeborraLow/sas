@@ -25,6 +25,7 @@ let transporter = nodemailer.createTransport({
     }
 });
 
+
 var app = express();
 
 // view engine setup
@@ -86,6 +87,7 @@ app.post('/subscribe', function(req, res) {
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
+    res.redirect('/');
 });
 app.post('/sendresult', function(req, res) {
     var now = new Date();
