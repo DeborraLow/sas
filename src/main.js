@@ -210,7 +210,7 @@ function calculateResults(){
   image = 'assets/m' + movieIndex + '.jpg';
   template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
   document.getElementById('results-header').innerHTML = title;
-  document.getElementById('results-descr').innerHTML = description
+  // document.getElementById('results-descr').innerHTML = description
   document.getElementById('results-img').src = image;
   document.querySelector("meta[property='og\\:title']").content = template + title;
   document.querySelector("meta[property='og\\:description']").content = description;
@@ -269,7 +269,7 @@ function socialInit(){
   vk(document,"vk-share",{
     url: document.URL,
     title: template + title,
-    description: description,
+    // description: description,
     image: 'https://lectures-sasonline.rhcloud.com/'+ image,
     noparse: true,
   },{type: 'round', text: 'Поделиться',});

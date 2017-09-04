@@ -746,15 +746,16 @@ margin-top:20px ;
   margin: 20px;
   z-index: 9;
   color: $white;
-  max-height: 70px;
+  // max-height: 70px;
 }
 
 .h2 {
   font-size: 30px;
   flex-grow: 1;
 }
-.h2_results{
+.h2_results {
   text-align: left;
+  padding-left:10px;
 }
 .h3 {
   font-size: 18px ;
