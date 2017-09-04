@@ -11,6 +11,7 @@ var startButton = document.getElementById('start-button');
 var endButton = document.getElementById('end-button');
 var lastScrollTop = 0;
 var isLarge = true;
+var vk;
 //SHARE INFO
 var template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
 var title = '';
@@ -39,6 +40,21 @@ var moviesDict = {
 if(window.innerWidth<=1000){isLarge = false};
 
 window.onload = ()=>{
+  vk = function (d, id, pr1, pr2) {
+    var js = d.createElement("script");
+    js.src = "http://vk.com/js/api/share.js?90";
+    js.onload = js.onreadystatechange = function () {
+    if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+      if (!this.executed) {
+        this.executed = true;
+        setTimeout(function () {
+          d.getElementById(id).innerHTML = VK.Share.button(pr1, pr2);
+          VK.Share._base_domain = 'https:' + VK.Share._base_domain;
+        }, 0);
+      }
+    }};
+    d.documentElement.appendChild(js);
+  };
 
 // document.getElementById('fullpage').fullpage({
 //   anchors: [
@@ -54,7 +70,7 @@ window.setTimeout(()=>{
   var results = document.getElementById('test-results');
   if (isLarge){results.style.backgroundImage = "url('assets/giphy.gif')";
   results.style.backgroundSize = "cover";}
-  socialInit();
+
 },7000);
   initialize('#fullpage', {
     anchors: [
@@ -208,13 +224,14 @@ function calculateResults(){
   description = moviesDict[movieIndex].title;
   image = 'assets/m' + movieIndex + '.jpg';
   template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
-  window.vk(document,"vk-share",{
+  vk(document,"vk-share",{
     url: document.URL,
     title: template + title,
     description: description,
     image: 'http://advanced.studies.school/'+ image,
     noparse: true,
-  },{type: 'round', text: 'Поделиться',});
+  },{type: 'round', text: 'Поделиться'});
+
   document.getElementById('results-header').innerHTML = title;
   // document.getElementById('results-descr').innerHTML = description
   document.getElementById('results-img').src = image;
@@ -273,21 +290,6 @@ function documentHeight() {
 
 function socialInit(){
 
-  window.vk = function (d, id, pr1, pr2) {
-    var js = d.createElement("script");
-    js.src = "http://vk.com/js/api/share.js?90";
-    js.onload = js.onreadystatechange = function () {
-    if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-      if (!this.executed) {
-        this.executed = true;
-        setTimeout(function () {
-          d.getElementById(id).innerHTML = VK.Share.button(pr1, pr2);
-          VK.Share._base_domain = 'https:' + VK.Share._base_domain;
-        }, 0);
-      }
-    }};
-    d.documentElement.appendChild(js);
-  };
 
   // window.fbAsyncInit = function() {
   //     FB.init({
