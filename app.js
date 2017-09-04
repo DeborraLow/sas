@@ -86,7 +86,7 @@ app.post('/subscribe', function(req, res) {
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
-    res.redirect('/');
+    res.redirect('/#test-results');
 });
 app.post('/sendresult', function(req, res) {
     var now = new Date();

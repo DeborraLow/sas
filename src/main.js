@@ -261,6 +261,7 @@ function socialInit(){
     image: 'https://lectures-sasonline.rhcloud.com/'+ image,
     noparse: true,
   },{type: 'round', text: 'Поделиться',});
+  document.getElementById('vk_groups').style.margin = '10px'
   function vk (d, id, pr1, pr2) {
     var js = d.createElement("script");
     js.src = "http://vk.com/js/api/share.js?90";
