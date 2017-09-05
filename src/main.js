@@ -109,7 +109,7 @@ window.onload = () => {
     window.setTimeout(() => {
       var results = document.getElementById('test-results');
       if (isLarge) {
-        results.style.backgroundImage = "url('assets/giphy.gif')";
+        results.style.backgroundImage = "url('assets/blackboard_small.jpg')";
         results.style.backgroundSize = "cover";
       }
 
@@ -122,7 +122,7 @@ window.onload = () => {
     document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
 
   }
-  document.getElementById('hello-arrow-down').addEventListener('click', ()=>{yaCounter45804912.reachGoal('1_SCREEN_ARROW_CLICKED')})
+  document.getElementById('hello-arrow-down').addEventListener('click', ()=>{yaCounter45804912.reachGoal('1_SCREEN_ARROW_CLICKED')});
 }
 
 function showButton(button) {
