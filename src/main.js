@@ -230,7 +230,7 @@ if ("onhashchange" in window) {
 }
 
 startButton.addEventListener('click', () => {
-  yaCounter45804912.reachGoal('TEST_STARTED');
+  yaCounter45804912.reachGoal('START_PRESSED');
   if (isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
