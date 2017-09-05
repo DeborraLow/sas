@@ -12,7 +12,7 @@ var endButton = document.getElementById('end-button');
 var lastScrollTop = 0;
 var isLarge = true;
 var vk;
-yaCounter45804912 = false;
+window.yaCounter45804912 = false;
 //SHARE INFO
 var template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
 var title = '';
