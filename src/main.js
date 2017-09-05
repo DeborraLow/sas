@@ -122,6 +122,7 @@ window.onload = () => {
     document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
 
   }
+  document.getElementById('hello-arrow-down').onclick = yaCounter45804912.reachGoal('1_SCREEN_ARROW_CLICKED');
 }
 
 function showButton(button) {
@@ -132,10 +133,10 @@ function showButton(button) {
       button.classList.add('button_visible');
       button.classList.remove('button_hidden');
     }, 2000)
-    // yaCounter45804912.hit('/#presentation', {
-    //   title: 'presentation',
-    //   referer: 'http://advanced.studies.school'
-    // });
+    yaCounter45804912.hit('/#presentation', {
+      title: 'presentation',
+      referer: 'http://advanced.studies.school'
+    });
     ga('set', 'page', '/#presentation');
     ga('send', 'pageview');
   }
@@ -145,41 +146,55 @@ function progressBarHandler() {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '33.3%';
-    // yaCounter45804912.hit('/#test1', {
-    //   title: 'test1',
-    //   referer: 'http://advanced.studies.school'
-    // });
+    yaCounter45804912.hit('/#test1', {
+      title: 'test1',
+      referer: 'http://advanced.studies.school'
+    });
     ga('set', 'page', '/#test1');
     ga('send', 'pageview');
   } else if (location.hash === "#test2" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '66.6%';
-    // yaCounter45804912.hit('/#test2', {
-    //   title: 'test2',
-    //   referer: 'http://advanced.studies.school'
-    // });
+    yaCounter45804912.hit('/#test2', {
+      title: 'test2',
+      referer: 'http://advanced.studies.school'
+    });
     ga('set', 'page', '/#test2');
     ga('send', 'pageview');
   } else if (location.hash === "#test3" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '100%';
-    // yaCounter45804912.hit('/#test3', {
-    //   title: 'test3',
-    //   referer: 'http://advanced.studies.school'
-    // });
+    yaCounter45804912.hit('/#test3', {
+      title: 'test3',
+      referer: 'http://advanced.studies.school'
+    });
     ga('set', 'page', '/#test3');
     ga('send', 'pageview');
   } else if (location.hash === "#test-results") {
     progress.style.display = 'none';
     progressBar.style.display = 'none';
-    // yaCounter45804912.hit('/#test-results', {
-    //   title: 'test-results',
-    //   referer: 'http://advanced.studies.school'
-    // });
+    yaCounter45804912.hit('/#test-results', {
+      title: 'test-results',
+      referer: 'http://advanced.studies.school'
+    });
     ga('set', 'page', '/#test-results');
     ga('send', 'pageview');
+  }
+}
+function yandexGoals(){
+  if (location.hash === "#presentation"){
+    yaCounter45804912.reachGoal('2_SCREEN_VISITED');
+  }
+  else if (location.hash === "#test1"){
+    yaCounter45804912.reachGoal('TEST_1_VISITED');
+  }
+  else if (location.hash === "#test2"){
+    yaCounter45804912.reachGoal('TEST_2_VISITED');
+  }
+  else if (location.hash === "#test3"){
+    yaCounter45804912.reachGoal('TEST_3_VISITED');
   }
 }
 // var sections = document.querySelectorAll('.fp-section');
@@ -203,16 +218,19 @@ if ("onhashchange" in window) {
   window.onhashchange = () => {
     showButton(startButton);
     progressBarHandler();
+    yandexGoals();
   }
 } else {
   window.onload = () => {
     showButton(startButton);
     progressBarHandler();
+    yandexGoals();
     document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
   }
 }
 
 startButton.addEventListener('click', () => {
+  yaCounter45804912.reachGoal('TEST_STARTED');
   if (isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
@@ -248,6 +266,7 @@ for (var i = 0; i < listItems.length; i++) {
   }
 }
 endButton.addEventListener('click', () => {
+  yaCounter45804912.reachGoal('TEST_FINISHED');
   if (!endButton.classList.contains('button_disabled')) {
     sendResult(checkedItems);
     calculateResults();
@@ -371,35 +390,34 @@ function socialInit() {
   //    }(document, 'script', 'facebook-jssdk'));
 
 }
-// (function(d, w, c) {
-//
-//
-//   (w[c] = w[c] || []).push(function() {
-//     try {
-//       w.yaCounter45804912 = new Ya.Metrika({
-//         id: 45804912,
-//         clickmap: true,
-//         trackLinks: true,
-//         accurateTrackBounce: true,
-//         webvisor: true,
-//         trackHash: true
-//       });
-//     } catch (e) {}
-//   });
-//
-//   var n = d.getElementsByTagName("script")[0],
-//     s = d.createElement("script"),
-//     f = function() {
-//       n.parentNode.insertBefore(s, n);
-//     };
-//   s.type = "text/javascript";
-//   s.async = true;
-//   s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
-//
-//   if (w.opera == "[object Opera]") {
-//     d.addEventListener("DOMContentLoaded", f, false);
-//   } else {
-//     f();
-//   }
-// })(document, window, "yandex_metrika_callbacks");
-//
+(function(d, w, c) {
+
+
+  (w[c] = w[c] || []).push(function() {
+    try {
+      w.yaCounter45804912 = new Ya.Metrika({
+        id: 45804912,
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        trackHash: true
+      });
+    } catch (e) {}
+  });
+
+  var n = d.getElementsByTagName("script")[0],
+    s = d.createElement("script"),
+    f = function() {
+      n.parentNode.insertBefore(s, n);
+    };
+  s.type = "text/javascript";
+  s.async = true;
+  s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
+
+  if (w.opera == "[object Opera]") {
+    d.addEventListener("DOMContentLoaded", f, false);
+  } else {
+    f();
+  }
+})(document, window, "yandex_metrika_callbacks");
