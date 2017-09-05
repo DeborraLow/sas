@@ -11,7 +11,7 @@ var startButton = document.getElementById('start-button');
 var endButton = document.getElementById('end-button');
 var lastScrollTop = 0;
 var isLarge = true;
-var vk;
+window.yaCounter45804912;
 //SHARE INFO
 var template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
 var title = '';
@@ -132,9 +132,9 @@ function showButton(button) {
       button.classList.add('button_visible');
       button.classList.remove('button_hidden');
     }, 2000)
-    yaCounter45804912.hit('#presentation', {
+    yaCounter45804912.hit('/#presentation', {
       title: 'presentation',
-      referer: 'http://advanced.studies.school/'
+      referer: 'http://advanced.studies.school'
     });
   }
 };
@@ -143,30 +143,30 @@ function progressBarHandler() {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '33.3%';
-    yaCounter45804912.hit('#test1', {
+    yaCounter45804912.hit('/#test1', {
       title: 'test1',
-      referer: 'http://advanced.studies.school/'
+      referer: 'http://advanced.studies.school'
     });
   } else if (location.hash === "#test2" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '66.6%';
-    yaCounter45804912.hit('#test2', {
+    yaCounter45804912.hit('/#test2', {
       title: 'test2',
-      referer: 'http://advanced.studies.school/'
+      referer: 'http://advanced.studies.school'
     });
   } else if (location.hash === "#test3" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '100%';
-    yaCounter45804912.hit('#test3', {
+    yaCounter45804912.hit('/#test3', {
       title: 'test3',
-      referer: 'http://advanced.studies.school/'
+      referer: 'http://advanced.studies.school'
     });
   } else if (location.hash === "#test-results") {
     progress.style.display = 'none';
     progressBar.style.display = 'none';
-    yaCounter45804912.hit('#test-results', {
+    yaCounter45804912.hit('/#test-results', {
       title: 'test-results',
       referer: 'http://advanced.studies.school'
     });
@@ -361,6 +361,8 @@ function socialInit() {
   //    }(document, 'script', 'facebook-jssdk'));
 
 }(function(d, w, c) {
+
+
   (w[c] = w[c] || []).push(function() {
     try {
       w.yaCounter45804912 = new Ya.Metrika({

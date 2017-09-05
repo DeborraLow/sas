@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var xFrameOptions = require('x-frame-options');
 var subdomain = require('express-subdomain');
 var path = require('path');
 var env = process.env;
@@ -38,6 +39,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(xFrameOptions('ALLOW-FROM http://webvisor.com/'));
 // app.use(evercookie.backend({
 //   pngPath: '/evercookie_png.php',
 //   etagPath: '/evercookie_etag.php',

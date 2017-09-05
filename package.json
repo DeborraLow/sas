@@ -20,7 +20,8 @@
     "express-subdomain": "^1.0.5",
     "morgan": "~1.7.0",
     "nodemailer": "^4.0.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "x-frame-options": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
