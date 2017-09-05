@@ -122,7 +122,7 @@ window.onload = () => {
     document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
 
   }
-  document.getElementById('hello-arrow-down').onclick = yaCounter45804912.reachGoal('1_SCREEN_ARROW_CLICKED');
+  document.getElementById('hello-arrow-down').addEventListener('click', ()=>{yaCounter45804912.reachGoal('1_SCREEN_ARROW_CLICKED')})
 }
 
 function showButton(button) {
@@ -137,8 +137,8 @@ function showButton(button) {
       title: 'presentation',
       referer: 'http://advanced.studies.school'
     });
-    ga('set', 'page', '/#presentation');
-    ga('send', 'pageview');
+    // ga('set', 'page', '/#presentation');
+    // ga('send', 'pageview');
   }
 };
 function progressBarHandler() {
@@ -150,8 +150,8 @@ function progressBarHandler() {
       title: 'test1',
       referer: 'http://advanced.studies.school'
     });
-    ga('set', 'page', '/#test1');
-    ga('send', 'pageview');
+    // ga('set', 'page', '/#test1');
+    // ga('send', 'pageview');
   } else if (location.hash === "#test2" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
@@ -160,8 +160,8 @@ function progressBarHandler() {
       title: 'test2',
       referer: 'http://advanced.studies.school'
     });
-    ga('set', 'page', '/#test2');
-    ga('send', 'pageview');
+    // ga('set', 'page', '/#test2');
+    // ga('send', 'pageview');
   } else if (location.hash === "#test3" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
@@ -170,8 +170,8 @@ function progressBarHandler() {
       title: 'test3',
       referer: 'http://advanced.studies.school'
     });
-    ga('set', 'page', '/#test3');
-    ga('send', 'pageview');
+    // ga('set', 'page', '/#test3');
+    // ga('send', 'pageview');
   } else if (location.hash === "#test-results") {
     progress.style.display = 'none';
     progressBar.style.display = 'none';
@@ -179,8 +179,8 @@ function progressBarHandler() {
       title: 'test-results',
       referer: 'http://advanced.studies.school'
     });
-    ga('set', 'page', '/#test-results');
-    ga('send', 'pageview');
+    // ga('set', 'page', '/#test-results');
+    // ga('send', 'pageview');
   }
 }
 function yandexGoals(){
