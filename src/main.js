@@ -370,9 +370,10 @@ function socialInit() {
   //      fjs.parentNode.insertBefore(js, fjs);
   //    }(document, 'script', 'facebook-jssdk'));
 
-}(function(d, w, c) {
-
-
+}
+// (function(d, w, c) {
+//
+//
 //   (w[c] = w[c] || []).push(function() {
 //     try {
 //       w.yaCounter45804912 = new Ya.Metrika({
