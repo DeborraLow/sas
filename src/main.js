@@ -18,74 +18,111 @@ var title = '';
 var description = '';
 var image = '';
 var moviesDict = {
-  1:{title:'Меланхолия, Ларс фон Триер, 2011'},
-  2:{title:'Доктор Стрейнджлав, или Как я перестал бояться и полюбил бомбу, Стэнли Кубрик, 1964'},
-  3:{title:'Экзистенция, Дэвид Кроненберг, 1999'},
-  4:{title:'Опасный метод, Дэвид Кроненберг, 2011'},
-  5:{title:'Викинг, Андрей Кравчук, 2017'},
-  6:{title:'Люмьер и компания, Дэвид Линч и другие, 1995'},
-  7:{title:'Система безопасности, Сидни Люмет, 1964'},
-  8:{title:'Древо жизни, Терренс Малик, 2011'},
-  9:{title:'Туринская лошадь, Бела Тарр и Агнеш Храницки, 2011'},
-  10:{title:'Плутовство, Барри Левинсон, 1997'},
-  11:{title:'Гленгарри Глен Росс (Американцы), Джеймс Фоули, 1992'},
-  12:{title:'Искусственный разум, Стивен Спилберг, 2001'},
-  13:{title:'Тряпичный союз, Михаил Местецкий, 2015'},
-  14:{title:'Агора, Алехандро Аменабар, 2009'},
-  15:{title:'Монти Пайтон и Священный Грааль, Терри Гиллиам, 1975'},
-  16:{title:'Визит инспектора, Эшлин Уолш, 2015'},
-  17:{title:'Агора, Алехандро Аменабар, 2009'},
-  18:{title:'Призрак в доспехах: Невинность, Мамору Осии, 2004'}
+  1: {
+    title: 'Меланхолия, Ларс фон Триер, 2011'
+  },
+  2: {
+    title: 'Доктор Стрейнджлав, или Как я перестал бояться и полюбил бомбу, Стэнли Кубрик, 1964'
+  },
+  3: {
+    title: 'Экзистенция, Дэвид Кроненберг, 1999'
+  },
+  4: {
+    title: 'Опасный метод, Дэвид Кроненберг, 2011'
+  },
+  5: {
+    title: 'Викинг, Андрей Кравчук, 2017'
+  },
+  6: {
+    title: 'Люмьер и компания, Дэвид Линч и другие, 1995'
+  },
+  7: {
+    title: 'Система безопасности, Сидни Люмет, 1964'
+  },
+  8: {
+    title: 'Древо жизни, Терренс Малик, 2011'
+  },
+  9: {
+    title: 'Туринская лошадь, Бела Тарр и Агнеш Храницки, 2011'
+  },
+  10: {
+    title: 'Плутовство, Барри Левинсон, 1997'
+  },
+  11: {
+    title: 'Гленгарри Глен Росс (Американцы), Джеймс Фоули, 1992'
+  },
+  12: {
+    title: 'Искусственный разум, Стивен Спилберг, 2001'
+  },
+  13: {
+    title: 'Тряпичный союз, Михаил Местецкий, 2015'
+  },
+  14: {
+    title: 'Агора, Алехандро Аменабар, 2009'
+  },
+  15: {
+    title: 'Монти Пайтон и Священный Грааль, Терри Гиллиам, 1975'
+  },
+  16: {
+    title: 'Визит инспектора, Эшлин Уолш, 2015'
+  },
+  17: {
+    title: 'Агора, Алехандро Аменабар, 2009'
+  },
+  18: {
+    title: 'Призрак в доспехах: Невинность, Мамору Осии, 2004'
+  }
 }
-if(window.innerWidth<=1000){isLarge = false};
+if (window.innerWidth <= 1000) {
+  isLarge = false
+};
 
-window.onload = ()=>{
-  vk = function (d, id, pr1, pr2) {
+window.onload = () => {
+  vk = function(d, id, pr1, pr2) {
     var js = d.createElement("script");
     js.src = "http://vk.com/js/api/share.js?90";
-    js.onload = js.onreadystatechange = function () {
-    if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-      if (!this.executed) {
-        this.executed = true;
-        setTimeout(function () {
-          d.getElementById(id).innerHTML = VK.Share.button(pr1, pr2);
-          VK.Share._base_domain = 'https:' + VK.Share._base_domain;
-        }, 0);
+    js.onload = js.onreadystatechange = function() {
+      if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+        if (!this.executed) {
+          this.executed = true;
+          setTimeout(function() {
+            d.getElementById(id).innerHTML = VK.Share.button(pr1, pr2);
+            VK.Share._base_domain = 'https:' + VK.Share._base_domain;
+          }, 0);
+        }
       }
-    }};
+    };
     d.documentElement.appendChild(js);
   };
 
-// document.getElementById('fullpage').fullpage({
-//   anchors: [
-//       'start', 'presentation','test1','test2','test3'
-//     ],
-//   responsiveWidth: 1000
-// });
-if (isLarge){
-  window.setTimeout(()=>{document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
-  document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
-},2000);
-window.setTimeout(()=>{
-  var results = document.getElementById('test-results');
-  if (isLarge){results.style.backgroundImage = "url('assets/giphy.gif')";
-  results.style.backgroundSize = "cover";}
+  // document.getElementById('fullpage').fullpage({
+  //   anchors: [
+  //       'start', 'presentation','test1','test2','test3'
+  //     ],
+  //   responsiveWidth: 1000
+  // });
+  if (isLarge) {
+    window.setTimeout(() => {
+      document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
+      document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
+    }, 2000);
+    window.setTimeout(() => {
+      var results = document.getElementById('test-results');
+      if (isLarge) {
+        results.style.backgroundImage = "url('assets/giphy.gif')";
+        results.style.backgroundSize = "cover";
+      }
 
-},7000);
-  initialize('#fullpage', {
-    anchors: [
-      'start', 'presentation','test1','test2','test3'
-    ]
-  });
+    }, 7000);
+    initialize('#fullpage', {
+      anchors: ['start', 'presentation', 'test1', 'test2', 'test3']
+    });
+  } else {
+    document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
+    document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
+
+  }
 }
-else {
-  document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
-  document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
-
-}
-}
-
-
 
 function showButton(button) {
   if (location.hash === "#presentation" || !isLarge) {
@@ -95,43 +132,60 @@ function showButton(button) {
       button.classList.add('button_visible');
       button.classList.remove('button_hidden');
     }, 2000)
+    yaCounter45804912.hit('#presentation', {
+      title: 'presentation',
+      referer: 'http://advanced.studies.school/'
+    });
   }
 };
-function progressBarHandler(){
+function progressBarHandler() {
   if (location.hash === "#test1" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '33.3%';
-  }
-  else if (location.hash === "#test2" && isLarge) {
+    yaCounter45804912.hit('#test1', {
+      title: 'test1',
+      referer: 'http://advanced.studies.school/'
+    });
+  } else if (location.hash === "#test2" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '66.6%';
-  }
-  else if (location.hash === "#test3" && isLarge) {
+    yaCounter45804912.hit('#test2', {
+      title: 'test2',
+      referer: 'http://advanced.studies.school/'
+    });
+  } else if (location.hash === "#test3" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '100%';
-  }
-  else if (location.hash === "#test-results") {
+    yaCounter45804912.hit('#test3', {
+      title: 'test3',
+      referer: 'http://advanced.studies.school/'
+    });
+  } else if (location.hash === "#test-results") {
     progress.style.display = 'none';
     progressBar.style.display = 'none';
+    yaCounter45804912.hit('#test-results', {
+      title: 'test-results',
+      referer: 'http://advanced.studies.school'
+    });
   }
 }
-  // var sections = document.querySelectorAll('.fp-section');
-  // var act = document.querySelector('.activeSection');
-  //
-  // for (i = 0; i < sections.length; i++) {
-  //   console.log(sections[i]);
-  //   visibility : visible;
-  //   //  sections[i].classList.remove('fp-section');
-  //   sections[i].style.visibility = 'hidden';
-  //   sections[i].offsetHeight; // no need to store this anywhere, the reference is enough
-  //   sections[i].style.opacity = '';
-  // }
-  // act.style.visibility='visible';
-  // act.offsetHeight; // no need to store this anywhere, the reference is enough
-  // act.style.opacity='1';
+// var sections = document.querySelectorAll('.fp-section');
+// var act = document.querySelector('.activeSection');
+//
+// for (i = 0; i < sections.length; i++) {
+//   console.log(sections[i]);
+//   visibility : visible;
+//   //  sections[i].classList.remove('fp-section');
+//   sections[i].style.visibility = 'hidden';
+//   sections[i].offsetHeight; // no need to store this anywhere, the reference is enough
+//   sections[i].style.opacity = '';
+// }
+// act.style.visibility='visible';
+// act.offsetHeight; // no need to store this anywhere, the reference is enough
+// act.style.opacity='1';
 
 var startButton = document.getElementById('start-button');
 showButton(startButton);
@@ -141,15 +195,18 @@ if ("onhashchange" in window) {
     progressBarHandler();
   }
 } else {
-  window.onload = ()=>{showButton(startButton);
-  progressBarHandler();
-  document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
-}
+  window.onload = () => {
+    showButton(startButton);
+    progressBarHandler();
+    document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
+  }
 }
 
 startButton.addEventListener('click', () => {
-  if (isLarge){progress.style.display = 'block';
-  progressBar.style.display = 'block';}
+  if (isLarge) {
+    progress.style.display = 'block';
+    progressBar.style.display = 'block';
+  }
   document.getElementById('test1').style.display = 'flex';
   document.getElementById('test2').style.display = 'flex';
   document.getElementById('test3').style.display = 'flex';
@@ -162,34 +219,31 @@ for (var i = 0; i < listItems.length; i++) {
   listItems[i].onclick = function() {
     var index = checkedItems.indexOf(parseInt(this.id));
     if (index !== -1) {
-    checkedItems.splice(index, 1);
-    this.classList.toggle('list-item_selected');
-    }
-    else {
-      if(checkedItems.length==3){
+      checkedItems.splice(index, 1);
+      this.classList.toggle('list-item_selected');
+    } else {
+      if (checkedItems.length == 3) {
         alert('Выбери не более 3-х вариантов')
-      }
-      else{
+      } else {
         checkedItems.push(parseInt(this.id));
         this.classList.toggle('list-item_selected');
       }
     }
-    if(checkedItems.length>=3){
+    if (checkedItems.length >= 3) {
       endButton.classList.remove('button_disabled');
-    }
-    else {
+    } else {
       endButton.classList.add('button_disabled');
     }
-      console.log(checkedItems);
+    console.log(checkedItems);
   }
 }
-endButton.addEventListener('click',()=>{
-   if(!endButton.classList.contains('button_disabled')){
-     sendResult(checkedItems);
-     calculateResults();
-     document.getElementById('test-results').style.display = 'block';
-     window.location.href = '#test-results';
-     document.getElementById('test-results').style.visibility = 'visible';
+endButton.addEventListener('click', () => {
+  if (!endButton.classList.contains('button_disabled')) {
+    sendResult(checkedItems);
+    calculateResults();
+    document.getElementById('test-results').style.display = 'block';
+    window.location.href = '#test-results';
+    document.getElementById('test-results').style.visibility = 'visible';
     //  fullpage.destroy('all');
     //  document.getElementById('test-screen-3').classList.remove('activeSection')
     //  document.getElementById('test-results').classList.add('activeSection');
@@ -214,23 +268,27 @@ endButton.addEventListener('click',()=>{
     //    }
     // );
 
-   }
-   else {alert("Выбери не менее 3-х вариантов")}
+  } else {
+    alert("Выбери не менее 3-х вариантов")
+  }
 })
 
-function calculateResults(){
+function calculateResults() {
   var movieIndex = checkedItems[Math.floor(Math.random() * (checkedItems.length - 1))];
   title = moviesDict[movieIndex].title;
   description = moviesDict[movieIndex].title;
   image = 'assets/m' + movieIndex + '.jpg';
   template = "Я прошел тест Школы перпективных исследований. Мне рекомендован фильм: ";
-  vk(document,"vk-share",{
+  vk(document, "vk-share", {
     url: document.URL,
     title: template + title,
     description: description,
-    image: 'http://advanced.studies.school/'+ image,
-    noparse: true,
-  },{type: 'round', text: 'Поделиться'});
+    image: 'http://advanced.studies.school/' + image,
+    noparse: true
+  }, {
+    type: 'round',
+    text: 'Поделиться'
+  });
 
   document.getElementById('results-header').innerHTML = title;
   // document.getElementById('results-descr').innerHTML = description
@@ -243,22 +301,20 @@ function calculateResults(){
 
 var agreement = document.getElementById('agreement-checkbox');
 var submitButton = document.getElementById('form-subscribe__submit');
-if (agreement.checked){
+if (agreement.checked) {
   submitButton.disabled = false;
-}
-else{
+} else {
   submitButton.disabled = true;
 }
-agreement.addEventListener('click', ()=>{
-  if (agreement.checked){
+agreement.addEventListener('click', () => {
+  if (agreement.checked) {
     submitButton.disabled = false;
-  }
-  else{
+  } else {
     submitButton.disabled = true;
   }
 })
-submitButton.addEventListener('click',()=>{
-  if (!agreement.checked){
+submitButton.addEventListener('click', () => {
+  if (!agreement.checked) {
     alert('Пожалуйста, дайте свое согласие на обработку персональных данных')
   }
 })
@@ -271,25 +327,21 @@ function sendResult(items) {
   xmlhttp.send(JSON.stringify(items));
 }
 
-document.getElementById('form-subscribe').onsubmit = function(e){
+document.getElementById('form-subscribe').onsubmit = function(e) {
   e.preventDefault();
   console.log(e);
   var xhr = new XMLHttpRequest();
-xhr.open("POST", "/subscribe");
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.send(JSON.stringify({
-    email: e.target.elements.email.value
-}));
-alert('Благодарим за подписку и до встречи на открытых лекциях!');
+  xhr.open("POST", "/subscribe");
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({email: e.target.elements.email.value}));
+  alert('Благодарим за подписку и до встречи на открытых лекциях!');
 };
-
 
 function documentHeight() {
   return Math.max(document.documentElement.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight);
 }
 
-function socialInit(){
-
+function socialInit() {
 
   // window.fbAsyncInit = function() {
   //     FB.init({
@@ -308,29 +360,32 @@ function socialInit(){
   //      fjs.parentNode.insertBefore(js, fjs);
   //    }(document, 'script', 'facebook-jssdk'));
 
-}
-(function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter45804912 = new Ya.Metrika({
-                    id:45804912,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true,
-                    trackHash:true
-                });
-            } catch(e) { }
-        });
+}(function(d, w, c) {
+  (w[c] = w[c] || []).push(function() {
+    try {
+      w.yaCounter45804912 = new Ya.Metrika({
+        id: 45804912,
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        trackHash: true
+      });
+    } catch (e) {}
+  });
 
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
+  var n = d.getElementsByTagName("script")[0],
+    s = d.createElement("script"),
+    f = function() {
+      n.parentNode.insertBefore(s, n);
+    };
+  s.type = "text/javascript";
+  s.async = true;
+  s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
 
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
+  if (w.opera == "[object Opera]") {
+    d.addEventListener("DOMContentLoaded", f, false);
+  } else {
+    f();
+  }
+})(document, window, "yandex_metrika_callbacks");
