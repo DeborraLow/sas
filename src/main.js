@@ -132,10 +132,12 @@ function showButton(button) {
       button.classList.add('button_visible');
       button.classList.remove('button_hidden');
     }, 2000)
-    yaCounter45804912.hit('/#presentation', {
-      title: 'presentation',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#presentation', {
+    //   title: 'presentation',
+    //   referer: 'http://advanced.studies.school'
+    // });
+    ga('set', 'page', '/#presentation');
+    ga('send', 'pageview');
   }
 };
 function progressBarHandler() {
@@ -143,33 +145,41 @@ function progressBarHandler() {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '33.3%';
-    yaCounter45804912.hit('/#test1', {
-      title: 'test1',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#test1', {
+    //   title: 'test1',
+    //   referer: 'http://advanced.studies.school'
+    // });
+    ga('set', 'page', '/#test1');
+    ga('send', 'pageview');
   } else if (location.hash === "#test2" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '66.6%';
-    yaCounter45804912.hit('/#test2', {
-      title: 'test2',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#test2', {
+    //   title: 'test2',
+    //   referer: 'http://advanced.studies.school'
+    // });
+    ga('set', 'page', '/#test2');
+    ga('send', 'pageview');
   } else if (location.hash === "#test3" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '100%';
-    yaCounter45804912.hit('/#test3', {
-      title: 'test3',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#test3', {
+    //   title: 'test3',
+    //   referer: 'http://advanced.studies.school'
+    // });
+    ga('set', 'page', '/#test3');
+    ga('send', 'pageview');
   } else if (location.hash === "#test-results") {
     progress.style.display = 'none';
     progressBar.style.display = 'none';
-    yaCounter45804912.hit('/#test-results', {
-      title: 'test-results',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#test-results', {
+    //   title: 'test-results',
+    //   referer: 'http://advanced.studies.school'
+    // });
+    ga('set', 'page', '/#test-results');
+    ga('send', 'pageview');
   }
 }
 // var sections = document.querySelectorAll('.fp-section');
@@ -391,3 +401,11 @@ function socialInit() {
     f();
   }
 })(document, window, "yandex_metrika_callbacks");
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105875165-1', 'auto');
+  ga('send', 'pageview');
