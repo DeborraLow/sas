@@ -35,7 +35,7 @@ module.exports = {
       }
       , {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
+        use: ExtractTextPlugin.extract({fallback: "style-loader", use: ["css-loader","postcss-loader"]})
       }
       , {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -54,7 +54,7 @@ module.exports = {
       }, {
         test: /\.(scss|sass)$/,
         use: extractSass.extract({
-          use: ['css-loader','sass-loader'],
+          use: ['css-loader','postcss-loader','sass-loader'],
           // use style-loader in development
           fallback: "style-loader"
         })
