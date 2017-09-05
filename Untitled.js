@@ -2,7 +2,6 @@ function canUseWebP() {
   var e = document.createElement("canvas");
   return 0 == e.toDataURL("image/webp").indexOf("data:image/webp")
 }
-document.onload = function(){
   dummyImg = document.createElement("img");
 canUseWebP()
   ? window.outerWidth > 800
@@ -25,5 +24,3 @@ canUseWebP()
       document.styleSheets[0].insertRule('.hello-screen::before{background:url("assets/blackboard.jpg"); background-size:cover}', document.styleSheets[0].cssRules.length),
       document.getElementById("load").style.visibility = "hidden"
     });
-
-}
