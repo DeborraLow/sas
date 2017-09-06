@@ -556,17 +556,17 @@ body {
   z-index: -2;
 
   display: block;
-  background-image: url('blackboard_small.jpg');
+  background-image: url('blackboard.jpg');
 
   width: 100%;
   height: 100%;
   background-size: cover;
 
-  -webkit-filter: brightness(50%);
-  -moz-filter: brightness(50%);
-  -o-filter: brightness(50%);
-  -ms-filter: brightness(50%);
-  filter: brightness(50%);
+  // -webkit-filter: brightness(50%);
+  // -moz-filter: brightness(50%);
+  // -o-filter: brightness(50%);
+  // -ms-filter: brightness(50%);
+  // filter: brightness(50%);
 }
 // .presentation-screen::before{
 //   background:none;
@@ -585,17 +585,17 @@ body {
   height: 100%;
   background-size: cover;
 // background-image: url('https://im4.ezgif.com/tmp/ezgif-4-70c8fa8a43.webp');
-  -webkit-filter: brightness(65%);
-  -moz-filter: brightness(65%);
-  -o-filter: brightness(65%);
-  -ms-filter: brightness(65%);
-  filter: brightness(65%);
+  // -webkit-filter: brightness(65%);
+  // -moz-filter: brightness(65%);
+  // -o-filter: brightness(65%);
+  // -ms-filter: brightness(65%);
+  // filter: brightness(65%);
 }
  .hello-screen::before, .presentation-screen::before {
   // background-image: url('blackboard.gif');
 }
-.test-results::before{
-// background-image: url('giphy.gif');
+.test-results{
+background-image: url('blackboard.jpg');
 }
 
 // .content {
@@ -628,12 +628,12 @@ body {
 
 }
 .presentation-screen::before{
-background-image:url("blackboard_small.jpg"); background-size:cover;
--webkit-filter: brightness(50%);
--moz-filter: brightness(50%);
--o-filter: brightness(50%);
--ms-filter: brightness(50%);
-filter: brightness(50%);
+background-image:url("blackboard.jpg"); background-size:cover;
+// -webkit-filter: brightness(50%);
+// -moz-filter: brightness(50%);
+// -o-filter: brightness(50%);
+// -ms-filter: brightness(50%);
+// filter: brightness(50%);
 }
 
 .screen__filter{
