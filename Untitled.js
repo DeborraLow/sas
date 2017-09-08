@@ -20,23 +20,23 @@ dummyImg = document.createElement("img"),
 canUseWebP()
   ? window.innerWidth > 800
     ? (dummyImg.src = "assets/blackboard.webp", dummyImg.onload = function() {
-      addCSSRule(document.styleSheets[0], ".hello-screen::before", "background:url('assets/blackboard.webp'); background-size:cover");
-      document.getElementById("load").style.visibility = "hidden",
-      yaCounter45804912.reachGoal("1_SCREEN_VISITED")
+      addCSSRule(sheet, ".hello-screen::before", "background:url('assets/blackboard.webp'); background-size:cover",0);
+      document.getElementById("load").style.visibility = "hidden";
+      if(yaCounter45804912){yaCounter45804912.reachGoal("1_SCREEN_VISITED")}
     })
     : (dummyImg.src = "assets/blackboard.jpg", dummyImg.onload = function() {
-      addCSSRule(document.styleSheets[0], ".hello-screen::before", "background:url('assets/blackboard.jpg'); background-size:cover");
-      document.getElementById("load").style.visibility = "hidden",
-      yaCounter45804912.reachGoal("1_SCREEN_VISITED")
+      addCSSRule(sheet, ".hello-screen::before", "background:url('assets/blackboard.jpg'); background-size:cover",0);
+      document.getElementById("load").style.visibility = "hidden";
+      if(yaCounter45804912){yaCounter45804912.reachGoal("1_SCREEN_VISITED")}
     })
   : window.innerWidth > 800
     ? (dummyImg.src = "assets/blackboard.gif", dummyImg.onload = function() {
-      addCSSRule(document.styleSheets[0], ".hello-screen::before", "background:url('assets/blackboard.gif'); background-size:cover");
-      document.getElementById("load").style.visibility = "hidden",
-      yaCounter45804912.reachGoal("1_SCREEN_VISITED")
+      addCSSRule(sheet, ".hello-screen::before", "background:url('assets/blackboard.gif'); background-size:cover",0);
+      document.getElementById("load").style.visibility = "hidden";
+      if(yaCounter45804912){yaCounter45804912.reachGoal("1_SCREEN_VISITED")}
     })
     : (dummyImg.src = "assets/blackboard.jpg", dummyImg.onload = function() {
-      addCSSRule(document.styleSheets[0], ".hello-screen::before", "background:url('assets/blackboard.jpg'); background-size:cover");
-      document.getElementById("load").style.visibility = "hidden",
-      yaCounter45804912.reachGoal("1_SCREEN_VISITED")
+      addCSSRule(sheet, ".hello-screen::before", "background:url('assets/blackboard.jpg'); background-size:cover",0);
+      document.getElementById("load").style.visibility = "hidden";
+      if(yaCounter45804912){yaCounter45804912.reachGoal("1_SCREEN_VISITED")}
     });
