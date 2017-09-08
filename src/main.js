@@ -125,10 +125,10 @@ function showButton(button) {
       button.classList.add('button_visible');
       button.classList.remove('button_hidden');
     }, 2000)
-    yaCounter45804912.hit('/#presentation', {
-      title: 'presentation',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#presentation', {
+    //   title: 'presentation',
+    //   referer: 'http://advanced.studies.school'
+    // });
     // ga('set', 'page', '/#presentation');
     // ga('send', 'pageview');
   }
@@ -138,39 +138,39 @@ function progressBarHandler() {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '33.3%';
-    yaCounter45804912.hit('/#test1', {
-      title: 'test1',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#test1', {
+    //   title: 'test1',
+    //   referer: 'http://advanced.studies.school'
+    // });
     // ga('set', 'page', '/#test1');
     // ga('send', 'pageview');
   } else if (location.hash === "#test2" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '66.6%';
-    yaCounter45804912.hit('/#test2', {
-      title: 'test2',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#test2', {
+    //   title: 'test2',
+    //   referer: 'http://advanced.studies.school'
+    // });
     // ga('set', 'page', '/#test2');
     // ga('send', 'pageview');
   } else if (location.hash === "#test3" && isLarge) {
     progress.style.display = 'block';
     progressBar.style.display = 'block';
     progressBar.style.width = '100%';
-    yaCounter45804912.hit('/#test3', {
-      title: 'test3',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#test3', {
+    //   title: 'test3',
+    //   referer: 'http://advanced.studies.school'
+    // });
     // ga('set', 'page', '/#test3');
     // ga('send', 'pageview');
   } else if (location.hash === "#test-results") {
     progress.style.display = 'none';
     progressBar.style.display = 'none';
-    yaCounter45804912.hit('/#test-results', {
-      title: 'test-results',
-      referer: 'http://advanced.studies.school'
-    });
+    // yaCounter45804912.hit('/#test-results', {
+    //   title: 'test-results',
+    //   referer: 'http://advanced.studies.school'
+    // });
     // ga('set', 'page', '/#test-results');
     // ga('send', 'pageview');
   }
