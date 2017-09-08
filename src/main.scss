@@ -583,6 +583,7 @@ body {
 
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat;
   background-size: cover;
 // background-image: url('https://im4.ezgif.com/tmp/ezgif-4-70c8fa8a43.webp');
   // -webkit-filter: brightness(65%);
@@ -596,6 +597,8 @@ body {
 }
 .test-results{
 background-image: url('blackboard.jpg');
+background-repeat: no-repeat;
+  background-size: cover;
 }
 
 // .content {
