@@ -258,13 +258,13 @@ for (var i = 0; i < listItems.length; i++) {
   }
 }
 endButton.addEventListener('click', () => {
-  yaCounter45804912.reachGoal('TEST_FINISHED');
   if (!endButton.classList.contains('button_disabled')) {
-    sendResult(checkedItems);
     calculateResults();
     document.getElementById('test-results').style.display = 'block';
     window.location.href = '#test-results';
     document.getElementById('test-results').style.visibility = 'visible';
+    yaCounter45804912.reachGoal('TEST_FINISHED');
+    sendResult(checkedItems);
     //  fullpage.destroy('all');
     //  document.getElementById('test-screen-3').classList.remove('activeSection')
     //  document.getElementById('test-results').classList.add('activeSection');
