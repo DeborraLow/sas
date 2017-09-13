@@ -12,14 +12,19 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const JavaScriptObfuscator = require('webpack-obfuscator');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+        lectures: './src/lectures.js',
+        // vendor: Object.keys(package.dependencies),
+        post_truth: "./src/post_truth.js"
+    },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js?[hash]'
+    filename: '[name].bundle.js?[hash]',
+    publicPath: ''
   },
   devServer: {
+    // hot: true,
     contentBase: './public'
-
   },
   module: {
     rules: [
@@ -67,15 +72,25 @@ module.exports = {
   onBuildEnd: ['purifycss ' + path.resolve(__dirname, 'public') + '/main.css ' +  path.resolve(__dirname, 'public') + '/index.html ' + path.resolve(__dirname, 'public') + '/bundle.js' + ' -o ' + path.resolve(__dirname, 'public') + '/main.css -i -m']
 }),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
+      filename: 'lectures.html',
       favicon: './public/favicon.ico',
       minify: {
         removeComments: true
       },
-      template: 'src/index.pug'
+      template: 'src/lectures.pug',
+      chunks: ['lectures'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'post_truth.html',
+      favicon: './public/favicon.ico',
+      minify: {
+        removeComments: true
+      },
+      template: 'src/post_truth.pug',
+      chunks: ['post_truth'],
     }),
     new CleanWebpackPlugin(['public'], {
-      root: '/Users/maratagliulin/dev/lectures',
+      root: path.resolve(__dirname),
       verbose: true,
       dry: false,
       exclude: ['favicon.ico', 'assets']
