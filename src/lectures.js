@@ -105,7 +105,7 @@ window.onload = () => {
     window.setTimeout(() => {
       document.getElementsByClassName('h1_hello')[0].style.opacity = '1';
       document.getElementsByClassName('arrow-down')[0].style.opacity = '1';
-    }, 2000);
+    }, 1500);
     initialize('#fullpage', {
       anchors: ['start', 'presentation', 'test1', 'test2', 'test3']
     });
